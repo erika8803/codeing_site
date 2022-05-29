@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+}
+ul {
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+#header {
+  background-color: #EBDFD5;
+  padding: 0 4em;
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+#nav {
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 0 1.5em;
+  }
+}
+
+/*-------------------------------------------
+メイン：top-page
+-------------------------------------------*/
+.top-page {
+  background-color: #EBDFD5;
+  padding: 4em;
+  display: flex;
+}
+
+
+/*-------------------------------------------
+レスポンシブ
+-------------------------------------------*/
+
+$tablet-size: 900px;
+$mobile-size: 768px;
+
+@mixin tablet {
+  @media (max-width: $tablet-size) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $mobile-size) {
+    @content;
+  }
+}
+
+/* タブレット-------------------------------------------*/
+
+@include tablet {
+  #header {
+    background-color: skyblue;
+    padding: 0 0 0 1rem;
+    .header-logo {
+      width: 200px;
+    }
+  }
+}
+
+/* モバイル-------------------------------------------*/
+@include mobile {
+  // navメニュー非表示設定
+  #nav {
+    position: absolute;
+    top: -40%;
+    right: -40%;
+  }
+ 
+  // 🍔メニュー 三本線設定
+  .hamburger-btn {
+    top: 25px;
+    width: 30px;
+    height: 30px;
+    right: 35px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 20;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+  }
+  span:nth-child(1) {
+    top: 4px;
+  }
+  span:nth-child(2) {
+    top: 14px;
+  }
+  span:nth-child(3) {
+    bottom: 4px;
+  }
+
+  // 🍔メニュークリック時
+  // 三本線をバツにする。
+  .open {
+    .btn-line {
+        background-color: #fff;
+    }
+    span:nth-child(1) {
+        transform: translateY(10px) rotate(-315deg); // rotate でななめに設定
+    }
+    span:nth-child(2) {
+        opacity: 0;
+    }
+    span:nth-child(3) {
+        transform: translateY(-10px) rotate(315deg); // rotate でななめに設定
+    }
+
+    // 🍔メニューを押下後、閉じることのできるクリックエリアを指定
+    #hamburger-btn-area {
+      transition: all 0.5s;
+      background-color: #000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: block;
+      position: fixed;
+      opacity: 0.8;
+      z-index: 2;
+      cursor: pointer;
+    }
+    // 🍔を押下後、メニューを表示する。
+    #nav {
+      top: 15em;
+      left: 0;
+      z-index: 5;
+      a {
+        color: #fff;
+      }
+      ul {
+        display: block;
+        background-color: pink;
+        text-align: center;
+      }
+      li {
+        padding: 2em;
+      }
+    }
+  }
+
+}
+
+
+
