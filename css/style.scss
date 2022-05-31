@@ -1,15 +1,17 @@
 body {
-    margin: 0;
+  margin: 0;
+  font-family:  ' noto Sans JP, Roboto';
+  line-height: 1.6;
 }
-ul {
-    margin: 0;
+ul p {
+  margin: 0;
 }
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 h1,
 h2,
@@ -24,7 +26,10 @@ h5 {
 -------------------------------------------*/
 #header {
   background-color: #EBDFD5;
-  padding: 0 4em;
+  .header {
+    width: 1000px;    
+    margin: 0 auto;
+  }
   .header-nav {
     display: flex;
     align-items: center;
@@ -41,20 +46,79 @@ h5 {
 }
 
 /*-------------------------------------------
-メイン：top-page
+メイン：トップページ
 -------------------------------------------*/
-.top-page {
+.top {
   background-color: #EBDFD5;
   padding: 4em;
-  display: flex;
 }
+.top-area {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  .top-title {
+    font-size: 60px;
+  }
+}
+/*-------------------------------------------
+メイン：共通
+-------------------------------------------*/
+.sec-title {
+  text-align: center;
+  color: #435B8C;
+  .title {
+    margin: 0;
+  }
+  .sub {
+    margin: 0;
+  }
+}
+.btn {
+  background-color: #435B8C;
+  width: 286px;
+  height: 51px;
+  border-radius: 160px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 100px;
+  gap: 10px;
+  margin: 0 auto;
+  .line-btn {
+    color: #fff;
+  
+  }
+}
+
+
+
+/*-------------------------------------------
+メイン：works
+-------------------------------------------*/
+// swiperエリア
+.swiper-container {
+  .swiper-wrapper {
+    display: flex;
+  }
+
+ li {
+    padding: 0 30px;
+    
+  }
+  .swiper-slide {
+    width: 312px;
+    
+  }
+}
+
+
+
 
 
 /*-------------------------------------------
 レスポンシブ
 -------------------------------------------*/
-
-$tablet-size: 900px;
+$tablet-size: 1000px;
 $mobile-size: 768px;
 
 @mixin tablet {
@@ -74,21 +138,22 @@ $mobile-size: 768px;
   #header {
     background-color: skyblue;
     padding: 0 0 0 1rem;
-    .header-logo {
-      width: 200px;
+    .header {
+      width: 800px;    
+      margin: 0 auto;
     }
   }
-}
 
-/* モバイル-------------------------------------------*/
-@include mobile {
+  /*-------------------------------------------
+  タブレット：ハンバーガーメニュー作成
+  -------------------------------------------*/
   // navメニュー非表示設定
   #nav {
     position: absolute;
     top: -40%;
     right: -40%;
   }
- 
+  
   // 🍔メニュー 三本線設定
   .hamburger-btn {
     top: 25px;
@@ -148,23 +213,57 @@ $mobile-size: 768px;
     }
     // 🍔を押下後、メニューを表示する。
     #nav {
+      width: 100%;
       top: 15em;
       left: 0;
       z-index: 5;
+      font-size: 16px;
       a {
         color: #fff;
       }
       ul {
         display: block;
-        background-color: pink;
         text-align: center;
       }
       li {
-        padding: 2em;
+        padding: 1em;
       }
     }
   }
+  /*-------------------------------------------
+  タブレット：トップページ
+  -------------------------------------------*/
+  .top-area {
+    .top-title {
+      font-size: 40px;
+    }
+    .top-image img {
+      width: 24em;
+    }
+  }
+}
 
+/* モバイル-------------------------------------------*/
+@include mobile {
+  #header {
+    background-color: pink;
+  }
+
+  /*-------------------------------------------
+  モバイル：トップページ
+  -------------------------------------------*/
+  .top-area {
+    flex-direction: column-reverse;
+    display: flex;
+    .top-text-area {
+      width: 100%;
+      flex-direction: column;
+      padding: 0;
+    }
+    .top-image img{
+      width: 100%;
+    }
+  }
 }
 
 

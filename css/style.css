@@ -1,9 +1,11 @@
 @charset "UTF-8";
 body {
   margin: 0;
+  font-family: ' noto Sans JP, Roboto';
+  line-height: 1.6;
 }
 
-ul {
+ul p {
   margin: 0;
 }
 
@@ -30,7 +32,11 @@ h5 {
 -------------------------------------------*/
 #header {
   background-color: #EBDFD5;
-  padding: 0 4em;
+}
+
+#header .header {
+  width: 1000px;
+  margin: 0 auto;
 }
 
 #header .header-nav {
@@ -56,32 +62,98 @@ h5 {
 }
 
 /*-------------------------------------------
-メイン：top-page
+メイン：トップページ
 -------------------------------------------*/
-.top-page {
+.top {
   background-color: #EBDFD5;
   padding: 4em;
+}
+
+.top-area {
+  max-width: 1000px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.top-area .top-title {
+  font-size: 60px;
+}
+
+/*-------------------------------------------
+メイン：共通
+-------------------------------------------*/
+.sec-title {
+  text-align: center;
+  color: #435B8C;
+}
+
+.sec-title .title {
+  margin: 0;
+}
+
+.sec-title .sub {
+  margin: 0;
+}
+
+.btn {
+  background-color: #435B8C;
+  width: 286px;
+  height: 51px;
+  border-radius: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 16px 100px;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.btn .line-btn {
+  color: #fff;
+}
+
+/*-------------------------------------------
+メイン：works
+-------------------------------------------*/
+.swiper-container .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.swiper-container li {
+  padding: 0 30px;
+}
+
+.swiper-container .swiper-slide {
+  width: 312px;
 }
 
 /*-------------------------------------------
 レスポンシブ
 -------------------------------------------*/
 /* タブレット-------------------------------------------*/
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   #header {
     background-color: skyblue;
     padding: 0 0 0 1rem;
   }
-  #header .header-logo {
-    width: 200px;
+  #header .header {
+    width: 800px;
+    margin: 0 auto;
   }
-}
-
-/* モバイル-------------------------------------------*/
-@media (max-width: 768px) {
+  /*-------------------------------------------
+  タブレット：ハンバーガーメニュー作成
+  -------------------------------------------*/
   #nav {
     position: absolute;
     top: -40%;
@@ -141,20 +213,60 @@ h5 {
     cursor: pointer;
   }
   .open #nav {
+    width: 100%;
     top: 15em;
     left: 0;
     z-index: 5;
+    font-size: 16px;
   }
   .open #nav a {
     color: #fff;
   }
   .open #nav ul {
     display: block;
-    background-color: pink;
     text-align: center;
   }
   .open #nav li {
-    padding: 2em;
+    padding: 1em;
+  }
+  /*-------------------------------------------
+  タブレット：トップページ
+  -------------------------------------------*/
+  .top-area .top-title {
+    font-size: 40px;
+  }
+  .top-area .top-image img {
+    width: 24em;
+  }
+}
+
+/* モバイル-------------------------------------------*/
+@media (max-width: 768px) {
+  #header {
+    background-color: pink;
+  }
+  /*-------------------------------------------
+  モバイル：トップページ
+  -------------------------------------------*/
+  .top-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .top-area .top-text-area {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  .top-area .top-image img {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
