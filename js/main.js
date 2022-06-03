@@ -1,10 +1,12 @@
+
 /*-------------------------------------------
 🍔メニュー処理
 -------------------------------------------*/
-var header = document.getElementById('header');
-var btn = document.getElementById('hamburger-btn');
-var hamburgerArea = document.getElementById('hamburger-btn-area');
-var nav = document.getElementById('nav');
+const header = document.getElementById('header');
+const btn = document.getElementById('hamburger-btn');
+const hamburgerArea = document.getElementById('hamburger-btn-area');
+const nav = document.getElementById('nav');
+
 /*-------------------------------------------
 🍔メニュークリック時の処理
 -------------------------------------------*/
@@ -14,7 +16,7 @@ btn.addEventListener('click' , function() {
   } else {
     header.classList.add('open');
   }
-} );
+});
 
 /*-------------------------------------------
 🍔メニューを押下後、クリックエリアでの閉じる処理
@@ -30,23 +32,38 @@ nav.addEventListener('click', function() {
 
 
 /*-------------------------------------------
-　　スライダー処理
+　swiper処理
 -------------------------------------------*/
-var getTranslate;
-var slideWidth;
+// let getTranslate;
+// let slideWidth;
 // swiperオブジェクト呼び出し
-var mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('.swiper-container', {
   loop: true,
-  autoplay: {
-    delay: 5000, // デフォルト値を設定
-  },
-  slidesPerView: 5,
+  slidesPerView: 4,  
   initialSlide: 5,
+  centeredSlides: true,
+  spaceBetween: 5, // スライド間の余白（px）
+
+  autoplay: {
+    delay: 5000, // 秒数を設定
+  },
   breakpoints: {
-    767: {
+    375: {
       slidesPerView: 3,
-      spaceBetween: 0
+      initialSlide: 2
+    },
+    768: {
+      slidesPerView: 4,
+      initialSlide: 3
+    },
+    1025: {
+      slidesPerView: 5,
+      initialSlide: 4
     }
+
   }
+
+  
 })
 
+ 

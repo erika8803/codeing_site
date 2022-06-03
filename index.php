@@ -47,12 +47,15 @@
         </ul>
       </div>
 
-      <button class="btn">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>blog">
-          <div class="line-btn">もっと見る</div>
-        </a>
-      </button>
+      <div class="btn-area">
+        <button class="btn">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>blog">
+            <div class="line-btn">もっと見る</div>
+          </a>
+        </button>
+      </div>
     </div>
   </section>
 </main>
 <?php get_footer(); ?>
+<?php wp_footer(); ?>
