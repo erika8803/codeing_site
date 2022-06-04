@@ -9,8 +9,8 @@
       <?php wp_head(); ?>
     </head>
     <body>
-      <header id="header">
-        <div class="header">
+      <header>
+        <div id="header">
           <div class="header-nav">
             <h1 class="header-title">
               <a href="<?php echo home_url(); ?>">

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-  <section class="top">
+  <section id="main-top" class="top">
     <div  class="top-area">
       <div class="top-text-area">
         <h2 class="top-title">Erika Portfolio</h2>
@@ -24,7 +24,7 @@
 
 
       <!-- スライドエリア -->
-      <div id="secound-area" class="swiper-container">
+      <!-- <div id="secound-area" class="swiper-container">
         <ul class="swiper-wrapper">
           <li class="swiper-slide">
             <img src="<?php bloginfo('template_url'); ?>/images/portfolio.png" alt="portfolio" />
@@ -45,7 +45,7 @@
             <img src="<?php bloginfo('template_url'); ?>/images/portfolio.png" alt="portfolio" />
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <div class="btn-area">
         <button class="btn">

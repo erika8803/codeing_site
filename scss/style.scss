@@ -33,15 +33,18 @@ h5 {
 -------------------------------------------*/
 #header {
   background-color: #EBDFD5;
-  padding: 1em 4em;
-  margin: 0 auto;
+  padding: 1em 0;
+  width: 100%;
+  z-index: 5;
   .header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 2em;
   }
   .header-title {
     font-family: Arial, Helvetica, sans-serif;
+    padding-left: 2em;
   }
 }
 #nav {
@@ -112,25 +115,28 @@ h5 {
 メイン：works
 -------------------------------------------*/
 // swiperエリア
-.swiper-container {
-  .swiper-wrapper {
-    display: flex;
-    gap: 0;
-  }
+#secound-area {
+  width: 100%;
 
- li {
-    padding: 0 1em;
+//   .swiper-wrapper {
+//     display: flex;
+//     gap: 0;
+//   }
+
+//  li {
+//     padding: 0 1em;
     
-  }
+//   }
+
   // .swiper-slide {
   //   width: 312px;
   // }
-  .swiper-slide img {
-    height: 13em;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  // .swiper-slide img {
+  //   height: 13em;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-size: cover;
+  // }
 }
 
 /*-------------------------------------------
@@ -163,7 +169,11 @@ PC(1025)
     background-color: skyblue;
     width: 100%;
     z-index: 5;
+    .header-title {
+      padding-left: 0;
+    }
   }
+
   .top {
     padding: 2em 1em;
   }
@@ -185,23 +195,24 @@ PC(1025)
     position: fixed;
     cursor: pointer;
     z-index: 20;
+    span {
+      position: absolute;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #333;
+    }
+    span:nth-child(1) {
+      top: 4px;
+    }
+    span:nth-child(2) {
+      top: 14px;
+    }
+    span:nth-child(3) {
+      bottom: 4px;
+    }
   }
-  span {
-    position: absolute;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: #333;
-  }
-  span:nth-child(1) {
-    top: 4px;
-  }
-  span:nth-child(2) {
-    top: 14px;
-  }
-  span:nth-child(3) {
-    bottom: 4px;
-  }
+
 
   /* 🍔メニュークリック時 三本線をバツにする */
   .open {
@@ -238,7 +249,7 @@ PC(1025)
       top: 15em;
       left: 0;
       z-index: 5;
-      font-size: 16px;
+      font-size: 24px;
       a {
         color: #fff;
       }

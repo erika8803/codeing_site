@@ -32,6 +32,27 @@ nav.addEventListener('click', function() {
 
 
 /*-------------------------------------------
+ヘッダーメニュー固定
+-------------------------------------------*/
+// IntersectionObserver オブジェクトを作成
+// 交差時に実行するコールバック関数を渡す
+const observer = new IntersectionObserver((entries) => {
+  // entriesは監視対象すべてが入っているリスト  
+  for(const e of entries) {
+     // isIntersecting プロパティは交差しているかどうかの真偽値
+     // viewport に交差し、入ったときに isIntersecting === true、出たときに false になる
+     if(e.isIntersecting) {
+       document.getElementById('header').style.position = 'static';
+     } else {
+       document.getElementById('header').style.position = 'fixed';
+     }
+   }
+ });
+
+ // observe メソッドに監視対象要素を引数として渡すことで監視されるようになります
+ observer.observe(document.getElementById('main-top'))
+
+/*-------------------------------------------
 　swiper処理
 -------------------------------------------*/
 // let getTranslate;
@@ -39,30 +60,31 @@ nav.addEventListener('click', function() {
 // swiperオブジェクト呼び出し
 const mySwiper = new Swiper('.swiper-container', {
   loop: true,
-  slidesPerView: 4,  
-  initialSlide: 5,
+  slidesPerView: 4.5,  
+  // initialSlide: 5,
   centeredSlides: true,
   spaceBetween: 5, // スライド間の余白（px）
 
+
+  
   autoplay: {
     delay: 5000, // 秒数を設定
   },
   breakpoints: {
     375: {
       slidesPerView: 3,
-      initialSlide: 2
+      // initialSlide: 2
     },
     768: {
       slidesPerView: 4,
-      initialSlide: 3
+      // initialSlide: 3
     },
     1025: {
       slidesPerView: 5,
-      initialSlide: 4
+      // initialSlide: 4
     }
 
   }
-
   
 })
 

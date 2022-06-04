@@ -1045,16 +1045,19 @@ h5 {
 -------------------------------------------*/
 #header {
   background-color: #EBDFD5;
-  padding: 1em 4em;
-  margin: 0 auto;
+  padding: 1em 0;
+  width: 100%;
+  z-index: 5;
 }
 #header .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 2em;
 }
 #header .header-title {
   font-family: Arial, Helvetica, sans-serif;
+  padding-left: 2em;
 }
 
 #nav ul {
@@ -1122,18 +1125,8 @@ h5 {
 /*-------------------------------------------
 メイン：works
 -------------------------------------------*/
-.swiper-container .swiper-wrapper {
-  display: flex;
-  gap: 0;
-}
-.swiper-container li {
-  padding: 0 1em;
-}
-.swiper-container .swiper-slide img {
-  height: 13em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+#secound-area {
+  width: 100%;
 }
 
 /*-------------------------------------------
@@ -1166,6 +1159,9 @@ PC(1025)
     width: 100%;
     z-index: 5;
   }
+  #header .header-title {
+    padding-left: 0;
+  }
 
   .top {
     padding: 2em 1em;
@@ -1189,24 +1185,20 @@ PC(1025)
     cursor: pointer;
     z-index: 20;
   }
-
-  span {
+  .hamburger-btn span {
     position: absolute;
     left: 0;
     width: 30px;
     height: 2px;
     background-color: #333;
   }
-
-  span:nth-child(1) {
+  .hamburger-btn span:nth-child(1) {
     top: 4px;
   }
-
-  span:nth-child(2) {
+  .hamburger-btn span:nth-child(2) {
     top: 14px;
   }
-
-  span:nth-child(3) {
+  .hamburger-btn span:nth-child(3) {
     bottom: 4px;
   }
 
@@ -1245,7 +1237,7 @@ PC(1025)
     top: 15em;
     left: 0;
     z-index: 5;
-    font-size: 16px;
+    font-size: 24px;
   }
   .open #nav a {
     color: #fff;
