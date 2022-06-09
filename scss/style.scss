@@ -36,7 +36,7 @@ a {
 }
 .btn-area {
   text-align: center;
-  padding: 2em;
+  padding: 2em 0 4em 0;
   .btn {
     border: 0px;
     background-color: #435B8C;
@@ -50,6 +50,11 @@ a {
     }
   }
 }
+.contents {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 
 /* ヘッダー */
 #header {
@@ -67,6 +72,12 @@ a {
     padding-left: 2em;
     font-size: 32px;
     font-family: 'Damion', cursive;
+  }
+  .header-static {
+    position: static;
+  }
+  .header-fixed {
+    position: fixed;
   }
 }
 #nav {
@@ -164,15 +175,15 @@ a {
 
 /* Aboutエリア */
 .front-about {
-  padding: 2em;
-
+  max-width: 1000px;
+  margin: 0 auto;
   .about-area {
     display: flex;
-    justify-content: center;
   }
   .about-text {
-    width: 40em;
+    padding: 2em;
   }
+
 }
 
 
@@ -196,6 +207,10 @@ footer {
   padding: 6em;
   letter-spacing: 0.2em;
   text-align: left;
+  .page-header-area {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
     .title {
       margin: 0;
       font-size: 48px;
@@ -204,8 +219,8 @@ footer {
 
 .page-sec-title {
   color: #435B8C;
-  padding: 4em 16em;
   letter-spacing: 0.2em;
+  padding: 4em;
   .title {
     margin: 0;
     font-size: 48px;
@@ -216,9 +231,10 @@ footer {
 }
 
 /* Service */
-
 .page-service {
   padding: 2em;
+  margin: 0 auto;
+
   // グリッド
   .service-area {
     display: grid;
@@ -261,12 +277,8 @@ footer {
 /* About */
 .profile {
   .about-area {
-    justify-content: center;
     display: flex;
     padding: 2em;
-    .about-text {
-      width: 40em;
-    }
     .sub {
       font-size: 32px;
       padding-bottom: 0.5em;
@@ -274,6 +286,7 @@ footer {
   } 
   .btn-area {
     text-align: left;
+    padding: 0;
     .btn {
       width: 28em;
     }
@@ -285,29 +298,42 @@ footer {
     padding: 2em 0;
   }
 }
-
-
-
-
-
-
-
 /* Vision */
 .vision-area {
   padding: 4em;
   justify-content: center;
   display: flex;
-  .vision-text {
-    width: 40em;
-  }
    .sub {
-    font-size: 32px;
-    padding-bottom: 0.5em;
+    font-size: 24px;
+    padding: 1em 0;
+    font-weight: bold;
    }
 }
 
+/* Contact */
+.contact {
+  background-color: #435B8C;
+  text-align: center;
+  .title {
+    color: #fff;
+  }
+  .text {
+    color: #fff;
+  }
+  .page-sec-title {
+    padding: 4em;
+  }
+  .btn-area {
+    padding: 2em 0 0 0;
+  }
+  .btn {
+    background-color: #fff;
+    .btn-text {
+      color: #435B8C;
+    }
+  }
 
-
+}
 
 
 /*-------------------------------------------
@@ -322,6 +348,23 @@ footer {
   display: flex;
 }
 
+/* Works */
+  // グリッド
+  .works {
+    max-width: 1000px;
+    margin: 0 auto;
+    .card-list-area {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-template-rows: repeat(2, 400px);
+      // gap: 5px;
+    }
+    .card {
+      color: #fff;
+      padding: 1em;
+      margin: 0 auto;
+    }
+  }
 
 
 
@@ -351,6 +394,7 @@ PC(1025)
 /*-------------------------------------------
 タブレット
 -------------------------------------------*/
+
 @include m.mq(tablet) {
   /* 共通 */
   #header {
@@ -360,6 +404,10 @@ PC(1025)
     .header-title {
       padding-left: 0.5em;
     }
+  
+  .header-fixed {
+    position: fixed;
+  }
   }
   .top {
     padding: 2em 1em;
@@ -375,19 +423,26 @@ PC(1025)
   .page-sec-title {
     padding: 2em;
     .title {
+      font-size: 32px;
       margin: 0;
     }
     .sub {
+      font-size: 16px;
       margin: 0;
     }
   }
   .page-header {
     padding: 2em;
-      .title {
-        margin: 0;
-        font-size: 48px;
-      }
+    .title {
+      margin: 0;
+      font-size: 32px;
     }
+    .sub {
+      font-size: 16px;
+    }
+  }
+
+
   
   /* ハンバーガーメニュー作成 */
   /* navメニュー非表示設定 */
@@ -476,8 +531,8 @@ PC(1025)
 
   /* フロント：トップ */
   .top-area {
+    // padding-top: 70px;
     flex-direction: column-reverse;
-    display: flex;
     .top-text-area {
       width: 100%;
       flex-direction: column;
@@ -502,7 +557,7 @@ PC(1025)
     .service-img {
       padding: 2em;
       img {
-        width: 70%;
+        width:50%;
       }
     }
   }
@@ -514,39 +569,58 @@ PC(1025)
   }
 
   /* フロント：About */
-  .about-area {
-    flex-direction: column-reverse;
-    padding: 0;
+  // .about-area {
+  //   flex-direction: column-reverse;
+  //   padding: 0;
+  //   .about-img {
+  //     text-align: center;
+  //   }
+  // }
+
+  /* Aboutエリア */
+  .front-about {
+    .about-area {
+      flex-direction: column-reverse;
+      display: flex;
+      justify-content: center;
+      padding: 1px;
+    }
+    .about-img {
+      margin: 0 auto;
+    }
+  }
+  /* Page：About */
+  .profile {
     .about-img {
       text-align: center;
     }
-  }
-
-  /* Page：About */
-  .profile {
     .about-area {
-      padding: 2em;
       display: block;
+      .btn {
+        width: 22em;
+      }
+      .btn-text {
+        font-size: 16px;
+      }
     }
     .btn-area {
       text-align: center;
     }
-  
   }
+
 
 
   .vision-area {
-    padding: 2em;
+    padding: 2em 2em 6em 2em;
     flex-direction: column-reverse;
-    .vision-text {
-      width: 100%;
-      padding: 1em;
-    }
     .vision-img {
       text-align: center;
-      width: 100%;
+    }
+    .sub {
+      padding: 2em 0 0.5em 0;
     }
   }
+
 }
 
 /*-------------------------------------------
@@ -570,7 +644,7 @@ PC(1025)
 
     .service-img {
       img {
-        width: 100%;
+        width: 80%;
       }
     }
   }

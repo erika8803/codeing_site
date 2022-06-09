@@ -14,7 +14,7 @@
     </head>
     <body>
       <header>
-        <div id="header">
+        <div id="header" class="">
           <div class="header-nav">
             <h1 class="header-title">
               <a href="<?php echo home_url(); ?>">

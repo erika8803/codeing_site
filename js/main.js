@@ -39,18 +39,24 @@ nav.addEventListener('click', function() {
 const observer = new IntersectionObserver((entries) => {
   // entriesは監視対象すべてが入っているリスト  
   for(const e of entries) {
-     // isIntersecting プロパティは交差しているかどうかの真偽値
-     // viewport に交差し、入ったときに isIntersecting === true、出たときに false になる
-     if(e.isIntersecting) {
-       document.getElementById('header').style.position = 'static';
-     } else {
-       document.getElementById('header').style.position = 'fixed';
-     }
-   }
- });
+    // isIntersecting プロパティは交差しているかどうかの真偽値
+    // viewport に交差し、入ったときに isIntersecting === true、出たときに false になる
+    if(e.isIntersecting) {
+      // header.style.position = 'static';
+      header.classList.add("header-static");
+    } else {
+      // header.style.position = 'fixed';
+      header.classList.add('header-fixed');
+    }
+  }
+
+});
+
 
  // observe メソッドに監視対象要素を引数として渡すことで監視されるようになります
- observer.observe(document.getElementById('main-top'))
+ observer.observe(document.getElementById('main-top'))  
+
+
 
 /*-------------------------------------------
 　swiper処理
