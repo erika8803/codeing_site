@@ -28,15 +28,27 @@ function menu_setting() {
 }
 add_action( 'after_setup_theme', 'menu_setting' );
 
+/* ---------------------------------------
+アーカイブURL生成
+--------------------------------------- */
+function post_has_archive($args, $post_type) {
+  if ('post' == $post_type) {
+      $args['rewrite'] = true;
+      $args['has_archive'] = $post_type; // ページURL
+      $args['label'] = 'Works'; // ページタイトル
+  }
+  return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 /* ---------------------------------------
 ポスト追加
 --------------------------------------- */
-function create_portfolio() {
-  register_post_type('portfolio', [
+function create_service() {
+  register_post_type('service', [
     'labels' => [
-        'name' => 'ポートフォリオ',
-        'singular_name' =>  'portfolio',
+        'name' => 'サービス',
+        'singular_name' =>  'services',
     ],
     'public' => true,
     'publicly_queryable' => true,
@@ -61,4 +73,4 @@ function create_portfolio() {
     ]
   ]);
 }
-add_action('init', 'create_portfolio');
+add_action('init', 'create_service');

@@ -1,17 +1,13 @@
-@use 'normalize' as rest;
 @use 'mixin' as m;
-@use "responsive";
+@use 'variable' as v;
+@use 'reset';
 @use "swiper-bundle.min";
 
 
 
 body {
-  margin: 0;
   line-height: 1.6;
-  font-family: Arial, Helvetica, sans-serif;
-}
-ul p {
-  margin: 0;
+  font-family: 'Kosugi Maru', sans-serif, 'Roboto', sans-serif;
 }
 li {
   list-style-type: none;
@@ -20,17 +16,42 @@ a {
   text-decoration: none;
   color: #333;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 0;
-}
+
 /*-------------------------------------------
-ヘッダー
+フロント
 -------------------------------------------*/
+/* 共通　*/
+.sec-title {
+  text-align: center;
+  color: #435B8C;
+  padding: 2em;
+  letter-spacing: 0.2em;
+  .title {
+    margin: 0;
+    font-size: 48px;
+  }
+  .sub {
+    margin: 0;
+  }
+}
+.btn-area {
+  text-align: center;
+  padding: 2em;
+  .btn {
+    border: 0px;
+    background-color: #435B8C;
+    width: 18em;
+    height: 48px;
+    border-radius: 160px;
+    .btn-text {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}
+
+/* ヘッダー */
 #header {
   background-color: #EBDFD5;
   padding: 1em 0;
@@ -43,8 +64,9 @@ h5 {
     padding-right: 2em;
   }
   .header-title {
-    font-family: Arial, Helvetica, sans-serif;
     padding-left: 2em;
+    font-size: 32px;
+    font-family: 'Damion', cursive;
   }
 }
 #nav {
@@ -56,65 +78,34 @@ h5 {
   }
 }
 
-/*-------------------------------------------
-メイン：トップページ
--------------------------------------------*/
+
+/* ：トップ */
 .top {
   background-color: #EBDFD5;
-  padding: 4em;
-  height: 24em;
+  padding: 5em;
+  height: 100%;
 }
 .top-area {
-  margin: 0 auto;
   display: flex;
-  padding: 0 8em;
+  justify-content: center;
+}
+.top-text-area {
+  padding: 1em 2em 0 0;
+  width: 36em;
+  line-height: 2;
   .top-title {
-    font-size: 60px;
+    font-size: 48px;
+    letter-spacing: 0.1em;
+  }
+  .top-text {
+    font-size: 18px;
   }
   img {
     width: 35em;
   }
 }
-/*-------------------------------------------
-メイン：共通
--------------------------------------------*/
-.sec-title {
-  text-align: center;
-  color: #435B8C;
-  padding: 2em;
-  .title {
-    margin: 0;
-  }
-  .sub {
-    margin: 0;
-  }
-}
-.btn-area {
-  padding: 4em;
-  .btn {
-    background-color: #435B8C;
-    width: 286px;
-    height: 51px;
-    border-radius: 160px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 16px 100px;
-    gap: 10px;
-    margin: 0 auto;
-    .line-btn {
-      color: #fff;
-    }
-  }
 
-}
-
-
-
-/*-------------------------------------------
-メイン：works
--------------------------------------------*/
-// swiperエリア
+/* Worksエリア */
 #secound-area {
   width: 100%;
 
@@ -139,23 +130,221 @@ h5 {
   // }
 }
 
+/* Servicesエリア */
+.services {
+  background-color: #FBF8F6;
+}
+.service-card {
+  background-color: #fff;
+  display: flex;
+  margin: 2em 8em;
+  justify-content: center;
+  .service-img {
+    text-align: center;
+    padding: 2em;
+  }
+}
+.service-text-area {
+  padding: 2em 2em 2em 0;
+  .service-title {
+    font-size: 32px;
+  }
+  .service-sub-title {
+    color: rgba(51, 51, 51, 0.34);
+    font-size: 20px;
+  }
+  .service-text {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+/* Aboutエリア */
+.front-about {
+  padding: 2em;
+
+  .about-area {
+    display: flex;
+    justify-content: center;
+  }
+  .about-text {
+    width: 40em;
+  }
+}
+
+
+/* フッター */
+footer {
+  background-color: #435B8C;
+  color: #fff;
+  text-align: center;
+  padding: 2em;
+}
+
+
+/*-------------------------------------------
+ページ
+-------------------------------------------*/
+/* ヘッダー */
+.page-header {
+  background-color: #FBF8F6;
+  text-align: center;
+  color: #435B8C;
+  padding: 6em;
+  letter-spacing: 0.2em;
+  text-align: left;
+    .title {
+      margin: 0;
+      font-size: 48px;
+    }
+  }
+
+.page-sec-title {
+  color: #435B8C;
+  padding: 4em 16em;
+  letter-spacing: 0.2em;
+  .title {
+    margin: 0;
+    font-size: 48px;
+  }
+  .sub {
+    margin: 0;
+  }
+}
+
+/* Service */
+
+.page-service {
+  padding: 2em;
+  // グリッド
+  .service-area {
+    display: grid;
+    // 書くグリッドアイテムの幅を指定する fr fraction 親要素からみた子要素の大きさを比率割合で指定できる
+    grid-template-columns: repeat(3, 1fr); 
+    // グリットアイテムの高さ repeat グリットアイテムを繰り返す
+    grid-template-rows: repeat(1, 500px);
+    gap: 10px; //グリッドアイテム同士の余白
+
+  }
+  .page-service-card {
+    background: skyblue;
+    color: #fff;
+    padding: 10px;
+    .service-img {
+      text-align: center;
+    }
+  }
+}
+
+
+
+// グリッド
+.container {
+  display: grid;
+  // 書くグリッドアイテムの幅を指定する fr fraction 親要素からみた子要素の大きさを比率割合で指定できる
+  grid-template-columns: repeat(5, 1fr); 
+  // グリットアイテムの高さ repeat グリットアイテムを繰り返す
+  grid-template-rows: repeat(2, 300px);
+  gap: 10px; //グリッドアイテム同士の余白
+}
+.item {
+  background: skyblue;
+  color: #fff;
+  padding: 10px;
+}
+
+
+
+/* About */
+.profile {
+  .about-area {
+    justify-content: center;
+    display: flex;
+    padding: 2em;
+    .about-text {
+      width: 40em;
+    }
+    .sub {
+      font-size: 32px;
+      padding-bottom: 0.5em;
+    }
+  } 
+  .btn-area {
+    text-align: left;
+    .btn {
+      width: 28em;
+    }
+    .btn-text {
+      font-size: 16px;
+    }
+  }
+  .skil-icon {
+    padding: 2em 0;
+  }
+}
+
+
+
+
+
+
+
+/* Vision */
+.vision-area {
+  padding: 4em;
+  justify-content: center;
+  display: flex;
+  .vision-text {
+    width: 40em;
+  }
+   .sub {
+    font-size: 32px;
+    padding-bottom: 0.5em;
+   }
+}
+
+
+
+
+
+/*-------------------------------------------
+アーカイブ
+-------------------------------------------*/
+/* ヘッダー */
+.archive {
+  padding: 2em;
+}
+
+.card-list-area {
+  display: flex;
+}
+
+
+
+
 /*-------------------------------------------
 PC(1025)
 -------------------------------------------*/
-
 @include m.mq(pc) {
   .top {
     padding: 2em;
     height: 100%;
   }
   .top-area {
-    padding: 0 4em;
+    padding: 0 2em;
     .top-title {
       font-size: 32px;
     }
     img {
       width: 24em;
     }
+  }
+
+  .page-sec-title {
+    padding: 4em 8em;
   }
 }
 
@@ -165,19 +354,41 @@ PC(1025)
 @include m.mq(tablet) {
   /* 共通 */
   #header {
-    padding: 1em;
     background-color: skyblue;
     width: 100%;
     z-index: 5;
     .header-title {
-      padding-left: 0;
+      padding-left: 0.5em;
     }
   }
-
   .top {
     padding: 2em 1em;
   }
-
+  .sec-title {
+    .title {
+      font-size: 32px;
+    }
+    .sub {
+      font-size: 16px;
+    }
+  }
+  .page-sec-title {
+    padding: 2em;
+    .title {
+      margin: 0;
+    }
+    .sub {
+      margin: 0;
+    }
+  }
+  .page-header {
+    padding: 2em;
+      .title {
+        margin: 0;
+        font-size: 48px;
+      }
+    }
+  
   /* ハンバーガーメニュー作成 */
   /* navメニュー非表示設定 */
   #nav {
@@ -246,7 +457,7 @@ PC(1025)
     /* 🍔を押下後、メニューを表示する */
     #nav {
       width: 100%;
-      top: 15em;
+      top: 5em;
       left: 0;
       z-index: 5;
       font-size: 24px;
@@ -263,7 +474,7 @@ PC(1025)
     }
   }
 
-  /* トップページ */
+  /* フロント：トップ */
   .top-area {
     flex-direction: column-reverse;
     display: flex;
@@ -275,13 +486,68 @@ PC(1025)
     .top-title {
       padding-top: 1em;
     }
+    .top-text {
+      font-size: 16px;
+    }
     .top-image img{
       width: 100%;
     }
   }
 
-}
+  /* フロント：Service */
+  .service-card {
+    display: block;
+    margin: 2em;
 
+    .service-img {
+      padding: 2em;
+      img {
+        width: 70%;
+      }
+    }
+  }
+  .service-text-area {
+    padding: 2em;
+    .service-text {
+      font-size: 16px;
+    }
+  }
+
+  /* フロント：About */
+  .about-area {
+    flex-direction: column-reverse;
+    padding: 0;
+    .about-img {
+      text-align: center;
+    }
+  }
+
+  /* Page：About */
+  .profile {
+    .about-area {
+      padding: 2em;
+      display: block;
+    }
+    .btn-area {
+      text-align: center;
+    }
+  
+  }
+
+
+  .vision-area {
+    padding: 2em;
+    flex-direction: column-reverse;
+    .vision-text {
+      width: 100%;
+      padding: 1em;
+    }
+    .vision-img {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
 
 /*-------------------------------------------
 モバイル
@@ -295,8 +561,28 @@ PC(1025)
     top: 18px;
     right: 20px;
   }
+  /*-------------------------------------------
+  モバイル：service
+  -------------------------------------------*/
+  .service-card {
+    display: block;
+    margin: 2em;
 
+    .service-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .service-text-area {
+    padding: 0;
+    .service-text {
+      font-size: 16px;
+    }
+  }
 }
+
+
 
 
 
