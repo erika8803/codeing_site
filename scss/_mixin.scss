@@ -3,6 +3,7 @@
 Breakpoints
 -------------------------------------------*/
 $breakpoint: (
+    smobile: 'screen and (max-width: 320px)',
     mobile: 'screen and (max-width: 480px)',
     tablet: 'screen and (max-width: 768px)',
     pc: 'screen and (max-width: 1025px)'

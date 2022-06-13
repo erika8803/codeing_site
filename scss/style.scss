@@ -7,7 +7,8 @@
 
 body {
   line-height: 1.6;
-  font-family: 'Kosugi Maru', sans-serif, 'Roboto', sans-serif;
+  // font-family: 'Kosugi Maru', sans-serif, 'Roboto', sans-serif;
+  font-family:  '游ゴシック',YuGothic,'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
 }
 li {
   list-style-type: none;
@@ -18,8 +19,12 @@ a {
 }
 
 /*-------------------------------------------
-フロント
+共通
 -------------------------------------------*/
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 /* 共通　*/
 .sec-title {
   text-align: center;
@@ -55,12 +60,13 @@ a {
   margin: 0 auto;
 }
 
-
-/* ヘッダー */
+/*-------------------------------------------
+フロント
+-------------------------------------------*/
+/* front-page ヘッダー */
 #header {
-  background-color: #EBDFD5;
+  background-color: v.$main-color;
   padding: 1em 0;
-  width: 100%;
   z-index: 5;
   .header-nav {
     display: flex;
@@ -89,8 +95,7 @@ a {
   }
 }
 
-
-/* ：トップ */
+/* front-page トップ */
 .top {
   background-color: #EBDFD5;
   padding: 5em;
@@ -105,7 +110,7 @@ a {
   width: 36em;
   line-height: 2;
   .top-title {
-    font-size: 48px;
+    font-size: 40px;
     letter-spacing: 0.1em;
   }
   .top-text {
@@ -116,78 +121,63 @@ a {
   }
 }
 
-/* Worksエリア */
-#secound-area {
-  width: 100%;
-
-//   .swiper-wrapper {
-//     display: flex;
-//     gap: 0;
-//   }
-
-//  li {
-//     padding: 0 1em;
-    
-//   }
-
-  // .swiper-slide {
-  //   width: 312px;
-  // }
-  // .swiper-slide img {
-  //   height: 13em;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   background-size: cover;
-  // }
+/* front-page Works */
+.swiper {
+  max-width: 50em;
+  img {
+    width: 20em;
+  }
+  ul {
+    padding: 2em;
+  }
 }
 
-/* Servicesエリア */
+
+/* front-page Services */
 .services {
   background-color: #FBF8F6;
 }
 .service-card {
   background-color: #fff;
   display: flex;
-  margin: 2em 8em;
+  margin: 2em;
   justify-content: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px gray;
+
   .service-img {
     text-align: center;
-    padding: 2em;
+    padding: 3em;
+  }
+  img {
+    width: 10em;
   }
 }
 .service-text-area {
   padding: 2em 2em 2em 0;
   .service-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   .service-sub-title {
     color: rgba(51, 51, 51, 0.34);
     font-size: 20px;
   }
   .service-text {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
-
-
-
-
-/* Aboutエリア */
+/* front-page About */
 .front-about {
-  max-width: 1000px;
-  margin: 0 auto;
   .about-area {
     display: flex;
   }
   .about-text {
     padding: 2em;
   }
-
 }
 
-
-/* フッター */
+/* front-page footer */
 footer {
   background-color: #435B8C;
   color: #fff;
@@ -199,12 +189,12 @@ footer {
 /*-------------------------------------------
 ページ
 -------------------------------------------*/
-/* ヘッダー */
+/* page header */
 .page-header {
   background-color: #FBF8F6;
   text-align: center;
   color: #435B8C;
-  padding: 6em;
+  padding: 4em 0 4em 2em;
   letter-spacing: 0.2em;
   text-align: left;
   .page-header-area {
@@ -220,7 +210,7 @@ footer {
 .page-sec-title {
   color: #435B8C;
   letter-spacing: 0.2em;
-  padding: 4em;
+  padding: 4em 0;
   .title {
     margin: 0;
     font-size: 48px;
@@ -230,55 +220,81 @@ footer {
   }
 }
 
-/* Service */
+/* page Service */
 .page-service {
+  max-width: 1000px;
   padding: 2em;
   margin: 0 auto;
-
+  .page-sec-title .title {
+    font-size: 48px;
+}
+  .title-area {
+    padding: 2em;
+  }
+  .title {
+    color: v.$point-color;
+    font-size: 24px;
+  }
+  .sub {
+    color: v.$point-color;
+  }
   // グリッド
   .service-area {
     display: grid;
-    // 書くグリッドアイテムの幅を指定する fr fraction 親要素からみた子要素の大きさを比率割合で指定できる
     grid-template-columns: repeat(3, 1fr); 
-    // グリットアイテムの高さ repeat グリットアイテムを繰り返す
-    grid-template-rows: repeat(1, 500px);
-    gap: 10px; //グリッドアイテム同士の余白
-
+    gap: 10px; 
   }
   .page-service-card {
-    background: skyblue;
-    color: #fff;
     padding: 10px;
     .service-img {
       text-align: center;
+    }
+    img {
+      width: 100%;
+    }
+    .text {
+      font-size: 16px;
     }
   }
 }
 
 
-
-// グリッド
-.container {
-  display: grid;
-  // 書くグリッドアイテムの幅を指定する fr fraction 親要素からみた子要素の大きさを比率割合で指定できる
-  grid-template-columns: repeat(5, 1fr); 
-  // グリットアイテムの高さ repeat グリットアイテムを繰り返す
-  grid-template-rows: repeat(2, 300px);
-  gap: 10px; //グリッドアイテム同士の余白
+/* page Flow */
+.page-sec-title .title {
+    margin: 0;
+    font-size: 48px;
 }
-.item {
-  background: skyblue;
-  color: #fff;
-  padding: 10px;
+.flow {
+  display: flex;
+  padding: 0 2em 6em 2em;
+  .item {
+    width: 32em;
+    background-color: #F8F9FD;
+    padding: 2em 1em;
+  }
+  .item-title {
+    text-align: center;
+  }
+  h2 {
+    padding-bottom: 0.7em;
+    color: v.$point-color;
+  }
+  img {
+    padding-bottom: 1em;
+  }
+  .sign {
+    width: 3em;
+    padding: 8em 0;
+    text-align: center;
+    color: v.$point-color;
+  }
 }
 
-
-
-/* About */
+/* page About */
 .profile {
   .about-area {
     display: flex;
-    padding: 2em;
+    padding: 2em 2em 4em 2em;
     .sub {
       font-size: 32px;
       padding-bottom: 0.5em;
@@ -298,19 +314,69 @@ footer {
     padding: 2em 0;
   }
 }
-/* Vision */
-.vision-area {
-  padding: 4em;
-  justify-content: center;
-  display: flex;
-   .sub {
-    font-size: 24px;
-    padding: 1em 0;
-    font-weight: bold;
-   }
+/* page Carrers */
+// .carrers-area {
+
+.carrers {
+  background-color: v.$back-color;
+}
+.timeline {
+  list-style: none;
+  padding: 0 2em 1em 2em;; 
+}
+.timeline > li {
+  margin-bottom: 60px;
 }
 
-/* Contact */
+@media ( min-width : 640px ){
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    // padding-left: 30px;
+    padding: 20px 0 2em 2em;
+  }
+  .timeline-content:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: v.$main-color;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}
+
+/* page Vision */
+.vision {
+  max-width: 1000px;
+  margin: 0 auto;
+  .vision-area {
+    padding: 4em;
+    justify-content: center;
+    display: flex;
+     .sub {
+      font-size: 24px;
+      padding: 1em 0;
+      font-weight: bold;
+     }
+  }
+}
+
+
+/* page Contact */
 .contact {
   background-color: #435B8C;
   text-align: center;
@@ -337,34 +403,113 @@ footer {
 
 
 /*-------------------------------------------
-アーカイブ
+archive
 -------------------------------------------*/
-/* ヘッダー */
-.archive {
-  padding: 2em;
-}
-
+/* archive */
+/* archive Works */
 .card-list-area {
   display: flex;
 }
+// グリッド
+.card-contents {
+  padding: 4em 2em;
+  .card-list-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    // grid-template-rows: repeat(1, 400px);
+    gap: 2em;
+  }
+  .card {
+    width: 100%;
+    color: #fff;
+    padding: 2em 0;
+  }
+  img {
+    width: 100%;
+  }
+}
 
-/* Works */
-  // グリッド
-  .works {
-    max-width: 1000px;
+  /* ページネーション(検索ページの次へや前へ) */
+  /* pagination */
+  .pagination {
+    margin-bottom: 30px;
+  }
+
+  /* リンクの枠 */
+  .pagination .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* 数字のリンク */
+  .pagination .nav-links .page-numbers {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #aaa;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 0.5em 0.8em;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+
+  /* 現在のページ */
+  .pagination .nav-links .current {
+    background-color: v.$point-color;
+    color: #fff;
+  }
+
+  /* 現在のページとドット以外にホバーした時 */
+  .pagination .nav-links a:hover {
+    background-color: v.$point-color;
+    color: #fff;
+  }
+
+/*-------------------------------------------
+single
+-------------------------------------------*/
+/* Work */
+.single {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em;
+  .post-thumbnail-image {
     margin: 0 auto;
-    .card-list-area {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); 
-      grid-template-rows: repeat(2, 400px);
-      // gap: 5px;
-    }
-    .card {
-      color: #fff;
-      padding: 1em;
-      margin: 0 auto;
+    border: 3em solid v.$main-color;
+    border-radius: 3em;
+    height: 30em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .post-title {
+    padding: 2em 0 1em 4em;
+    font-size: 32px;
+  }
+  .post-text {
+    padding: 0 8em;
+    a {
+      color: v.$point-color;
     }
   }
+
+  .pagination {
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    // .next {
+    //   text-align: right;
+    // }
+  }
+
+}
+
 
 
 
@@ -394,13 +539,13 @@ PC(1025)
 /*-------------------------------------------
 タブレット
 -------------------------------------------*/
-
 @include m.mq(tablet) {
   /* 共通 */
   #header {
     background-color: skyblue;
     width: 100%;
     z-index: 5;
+    position: fixed;
     .header-title {
       padding-left: 0.5em;
     }
@@ -410,7 +555,7 @@ PC(1025)
   }
   }
   .top {
-    padding: 2em 1em;
+    padding: 8em 1em 4em 1em;
   }
   .sec-title {
     .title {
@@ -432,7 +577,6 @@ PC(1025)
     }
   }
   .page-header {
-    padding: 2em;
     .title {
       margin: 0;
       font-size: 32px;
@@ -443,7 +587,6 @@ PC(1025)
   }
 
 
-  
   /* ハンバーガーメニュー作成 */
   /* navメニュー非表示設定 */
   #nav {
@@ -502,7 +645,7 @@ PC(1025)
       top: 0;
       left: 0;
       width: 100%;
-      height: 1000px;
+      height: 100vh;
       display: block;
       position: fixed;
       opacity: 0.8;
@@ -529,7 +672,7 @@ PC(1025)
     }
   }
 
-  /* フロント：トップ */
+  /* フロント top */
   .top-area {
     // padding-top: 70px;
     flex-direction: column-reverse;
@@ -549,13 +692,20 @@ PC(1025)
     }
   }
 
-  /* フロント：Service */
+  /* フロント Work */
+  /* front-page Works */
+  .swiper {
+    max-width: 30em;
+    img {
+      width: 24em;
+    }
+  }
+
+  /* フロント Service */
   .service-card {
     display: block;
-    margin: 2em;
-
     .service-img {
-      padding: 2em;
+      padding: 3em 2em 0 2em;
       img {
         width:50%;
       }
@@ -567,17 +717,9 @@ PC(1025)
       font-size: 16px;
     }
   }
+ 
 
-  /* フロント：About */
-  // .about-area {
-  //   flex-direction: column-reverse;
-  //   padding: 0;
-  //   .about-img {
-  //     text-align: center;
-  //   }
-  // }
-
-  /* Aboutエリア */
+  /* フロント About */
   .front-about {
     .about-area {
       flex-direction: column-reverse;
@@ -589,7 +731,14 @@ PC(1025)
       margin: 0 auto;
     }
   }
-  /* Page：About */
+
+  /* page header */
+  .page-header {
+    padding: 6em 0 2em 2em;
+  }
+
+
+  /* Page：About profile*/
   .profile {
     .about-img {
       text-align: center;
@@ -607,18 +756,116 @@ PC(1025)
       text-align: center;
     }
   }
+  /* page-about carrer*/
+  .carrers-area {
+    padding: 1em; 
+    .timeline {
+      padding: 0 2em 1em 2em;
+    }
+  }
 
+  /* page-about vision*/
+  .vision {
+    .vision-area {
+      padding: 2em 2em 4em 2em;
+      flex-direction: column-reverse;
+      .vision-img {
+        text-align: center;
+      }
+      .sub {
+        padding: 2em 0 0.5em 0;
+      }
+    }
+  }
 
+  .contact {
+    .page-sec-title {
+      padding: 2em;
+    }
+  }
 
-  .vision-area {
-    padding: 2em 2em 6em 2em;
-    flex-direction: column-reverse;
-    .vision-img {
+  /* page Service */
+  .page-service {
+    .page-sec-title {
+      padding: 0;
+      .title {
+        font-size: 32px;
+      }
+    }
+
+    .title {
+      font-size: 32px;
+    }
+    .title-area {
+      padding: 0;
+    }
+    .title {
+      color: v.$point-color;
+      font-size: 24px;
+    }
+    .service-sub-title {
+      color: rgba(51, 51, 51, 0.34);
+    }
+    // グリッド
+    .service-area {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); 
+      gap: 10px; 
+    }
+    .page-service-card {
+      padding: 2em 0;
+      img {
+        width: 70%;
+      }
+    }
+  }
+  /* page Service flow*/
+  /* page Flow */
+  .flow {
+    display: block;
+    justify-content: center;
+  .item {
+    margin: 1em auto;
+    width: 70%;
+    background-color: #F8F9FD;
+    .item-title {
       text-align: center;
     }
-    .sub {
-      padding: 2em 0 0.5em 0;
+    h2 {
+      padding-bottom: 0.7em;
+      color: v.$point-color;
     }
+    img {
+      padding-bottom: 1em;
+    }
+  }
+}
+  .sign {
+    display: none;
+  }
+
+
+  /* archive Works */
+  // グリッド
+  .works {
+    .card-list-area {
+      max-width: 750px;
+      grid-template-columns: repeat(2, auto ); 
+    }
+  }
+
+  /* single work */
+  .single {
+    .post-thumbnail-image {
+      border-radius: 3em;
+      height: 20em;
+    }
+    .post-title {
+      padding: 2em 0 0 1em;
+    }
+    .post-text {
+      padding: 1em;
+      }
   }
 
 }
@@ -630,14 +877,41 @@ PC(1025)
   #header {
     background-color: pink;
     font-size: 12px;
+    position: fixed;
+    .header-nav {
+      padding-right: 0;    
+      justify-content: start;
+    }
   }
+
   .hamburger-btn {
     top: 18px;
-    right: 20px;
+    right: 24px;
   }
-  /*-------------------------------------------
-  モバイル：service
-  -------------------------------------------*/
+
+  .top {
+    padding: 8em 1em 2em 1em;
+  }
+  .top-area {
+    padding: 0;
+    .top-title {
+      font-size: 32px;
+      padding: 1em 0;
+    }
+  }
+
+  /* front-page Works */
+  #second-area {
+   padding: 4em;
+  }
+  .swiper {
+    max-width: 21em;
+    img {
+      width: 18em;
+    }
+  }
+
+  /* フロント service */
   .service-card {
     display: block;
     margin: 2em;
@@ -649,14 +923,118 @@ PC(1025)
     }
   }
   .service-text-area {
-    padding: 0;
+    padding: 1em;
     .service-text {
       font-size: 16px;
     }
   }
+
+  /* page header */
+  .page-header {
+    padding: 6em 0 2em 2em;
+  }
+
+  /* Page-About profile*/
+  .profile {
+    img {
+      width: 100%;
+    }  
+    .about-area {
+      display: block;
+    }
+    .btn-area {
+      text-align: center;
+    }
+    .btn-text {
+      font-size: 14px;
+    }
+  }
+
+  /* Page-About carrers*/
+  .carrers {
+    .page-sec-title {
+      padding: 2em 1em;
+    }
+  }
+
+  /* page-about vision*/
+  .vision {
+    img {
+      width: 14em;
+    }
+  }
+
+
+  /* page service */
+  .page-sec-title {
+    padding: 2em 2em 2em 1em;
+  }
+
+  .page-service { 
+    .title {
+      font-size: 20px;
+    }
+  }
+  /* archive Works */
+  .archive {
+    padding: 1em;
+  }
+  // グリッド
+  .works {
+    .card-list-area {
+      max-width: 750px;
+      grid-template-columns: repeat(1, auto); 
+    }
+    img {
+      width: 100%;  
+    }
+  }
+
+  /* single work */
+  .single {
+    padding: 1em;
+    .post-thumbnail-image {
+      border: 1em solid v.$main-color;
+      border-radius: 2em;
+      height: 10em;
+    }
+    .post-title {
+      padding: 1em 0 0 0;
+      font-size: 24px;
+    }
+    .post-text {
+      padding: 0em;
+    }
+    .pagination {
+      padding: 0;
+    }
+  }
+
+  .contact {
+    .page-sec-title {
+      padding: 4em 0 1em 0;
+    }
+    .text {
+      padding: 1em 0 0 0;
+      font-size: 1
+      6px;
+    }
+  }
+
 }
 
 
 
 
-
+/*-------------------------------------------
+スモールモバイル
+-------------------------------------------*/
+@include m.mq(smobile) {
+  /* front-page Works */
+  .swiper {
+    max-width: 10em;
+    img {
+      width: 10em;
+    }
+  }
+}

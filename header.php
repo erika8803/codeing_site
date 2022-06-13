@@ -14,12 +14,11 @@
     </head>
     <body>
       <header>
-        <div id="header" class="">
+        <div id="header" class="header-static">
           <div class="header-nav">
             <h1 class="header-title">
               <a href="<?php echo home_url(); ?>">
               <?php bloginfo('name'); ?>
-                  <!-- <img class="header-logo" src="<?php bloginfo('template_url'); ?>/images/header-logo.png"> -->
               </a>
             </h1>
             <div id="nav">

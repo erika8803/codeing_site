@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', 'menu_setting' );
 function post_has_archive($args, $post_type) {
   if ('post' == $post_type) {
       $args['rewrite'] = true;
-      $args['has_archive'] = $post_type; // ページURL
+      $args['has_archive'] = 'works'; // ページURL
       $args['label'] = 'Works'; // ページタイトル
   }
   return $args;
@@ -42,35 +42,19 @@ function post_has_archive($args, $post_type) {
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 /* ---------------------------------------
-ポスト追加
+ページジェネーション
 --------------------------------------- */
-function create_service() {
-  register_post_type('service', [
-    'labels' => [
-        'name' => 'サービス',
-        'singular_name' =>  'services',
-    ],
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, // 管理するデフォルトUIを生成するかどうか。
-    'query_var' => true, // query_varキーの名前
-    'rewrite' => true, // 投稿タイプのパーマリンクのリライト方法を変更。
-    'capability_type' => 'post', // 権限の指定。
-    'has_archive' => true, 
-    'hierarchical' => false,
-    'menu_position' => 10,
-    'supports' => [ // 投稿できる項目。
-      'title',
-      'editor',
-      'thumbnail',
-      'custom-fields',
-      'excerpt',
-      'author',
-      'trackbacks',
-      'comments',
-      'revisions',
-      'page-attributes'
-    ]
-  ]);
+function change_posts_per_page($query) {
+  if ( is_admin() || ! $query->is_main_query() ) /* メインクエリ(表示設定で設定したページ)の時の投稿数 */
+      return;
+  if ( $query->is_archive('post') ) { 
+      $query->set( 'posts_per_page', '6' ); /* アーカイブページの時の投稿数 */
+  }
+  elseif($query->is_search('post')){
+    $query->set( 'posts_per_page', '-1' ); /* 検索ページの時の投稿数 */
+  }
+  return;
 }
-add_action('init', 'create_service');
+add_action( 'pre_get_posts', 'change_posts_per_page' );
+
+

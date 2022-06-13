@@ -49,7 +49,6 @@ const observer = new IntersectionObserver((entries) => {
       header.classList.add('header-fixed');
     }
   }
-
 });
 
 
@@ -61,37 +60,25 @@ const observer = new IntersectionObserver((entries) => {
 /*-------------------------------------------
 　swiper処理
 -------------------------------------------*/
-// let getTranslate;
-// let slideWidth;
 // swiperオブジェクト呼び出し
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('.swiper', {
   loop: true,
-  slidesPerView: 4.5,  
-  // initialSlide: 5,
+  slidesPerView: 3,  
+  // initialSlide: 4,
   centeredSlides: true,
-  spaceBetween: 5, // スライド間の余白（px）
+  spaceBetween: 15, // スライド間の余白（px）
 
-
-  
   autoplay: {
     delay: 5000, // 秒数を設定
   },
   breakpoints: {
+
     375: {
-      slidesPerView: 3,
-      // initialSlide: 2
+      slidesPerView: 1,
     },
     768: {
-      slidesPerView: 4,
-      // initialSlide: 3
+      slidesPerView: 2,
     },
-    1025: {
-      slidesPerView: 5,
-      // initialSlide: 4
-    }
-
   }
   
 })
-
- 

@@ -105,7 +105,7 @@ input, select {
 }
 
 /**
- * Swiper 8.2.2
+ * Swiper 8.2.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -113,7 +113,7 @@ input, select {
  *
  * Released under the MIT License
  *
- * Released on: June 1, 2022
+ * Released on: June 10, 2022
  */
 @font-face {
   font-family: swiper-icons;
@@ -542,7 +542,7 @@ button.swiper-pagination-bullet {
   display: none !important;
 }
 
-.swiper-horizontal > .swiper-scrollbar {
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: absolute;
   left: 1%;
   bottom: 3px;
@@ -551,7 +551,7 @@ button.swiper-pagination-bullet {
   width: 98%;
 }
 
-.swiper-vertical > .swiper-scrollbar {
+.swiper-scrollbar.swiper-scrollbar-vertical, .swiper-vertical > .swiper-scrollbar {
   position: absolute;
   right: 3px;
   top: 1%;
@@ -777,7 +777,7 @@ button.swiper-pagination-bullet {
 
 body {
   line-height: 1.6;
-  font-family: "Kosugi Maru", sans-serif, "Roboto", sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
 
 li {
@@ -790,8 +790,13 @@ a {
 }
 
 /*-------------------------------------------
-フロント
+共通
 -------------------------------------------*/
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 /* 共通　*/
 .sec-title {
   text-align: center;
@@ -829,11 +834,13 @@ a {
   margin: 0 auto;
 }
 
-/* ヘッダー */
+/*-------------------------------------------
+フロント
+-------------------------------------------*/
+/* front-page ヘッダー */
 #header {
   background-color: #EBDFD5;
   padding: 1em 0;
-  width: 100%;
   z-index: 5;
 }
 #header .header-nav {
@@ -861,7 +868,7 @@ a {
   padding: 0 1.5em;
 }
 
-/* ：トップ */
+/* front-page トップ */
 .top {
   background-color: #EBDFD5;
   padding: 5em;
@@ -879,7 +886,7 @@ a {
   line-height: 2;
 }
 .top-text-area .top-title {
-  font-size: 48px;
+  font-size: 40px;
   letter-spacing: 0.1em;
 }
 .top-text-area .top-text {
@@ -889,12 +896,18 @@ a {
   width: 35em;
 }
 
-/* Worksエリア */
-#secound-area {
-  width: 100%;
+/* front-page Works */
+.swiper {
+  max-width: 50em;
+}
+.swiper img {
+  width: 20em;
+}
+.swiper ul {
+  padding: 2em;
 }
 
-/* Servicesエリア */
+/* front-page Services */
 .services {
   background-color: #FBF8F6;
 }
@@ -902,33 +915,34 @@ a {
 .service-card {
   background-color: #fff;
   display: flex;
-  margin: 2em 8em;
+  margin: 2em;
   justify-content: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px gray;
 }
 .service-card .service-img {
   text-align: center;
-  padding: 2em;
+  padding: 3em;
+}
+.service-card img {
+  width: 10em;
 }
 
 .service-text-area {
   padding: 2em 2em 2em 0;
 }
 .service-text-area .service-title {
-  font-size: 32px;
+  font-size: 28px;
 }
 .service-text-area .service-sub-title {
   color: rgba(51, 51, 51, 0.34);
   font-size: 20px;
 }
 .service-text-area .service-text {
-  font-size: 24px;
+  font-size: 20px;
 }
 
-/* Aboutエリア */
-.front-about {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+/* front-page About */
 .front-about .about-area {
   display: flex;
 }
@@ -936,7 +950,7 @@ a {
   padding: 2em;
 }
 
-/* フッター */
+/* front-page footer */
 footer {
   background-color: #435B8C;
   color: #fff;
@@ -947,12 +961,12 @@ footer {
 /*-------------------------------------------
 ページ
 -------------------------------------------*/
-/* ヘッダー */
+/* page header */
 .page-header {
   background-color: #FBF8F6;
   text-align: center;
   color: #435B8C;
-  padding: 6em;
+  padding: 4em 0 4em 2em;
   letter-spacing: 0.2em;
   text-align: left;
 }
@@ -968,7 +982,7 @@ footer {
 .page-sec-title {
   color: #435B8C;
   letter-spacing: 0.2em;
-  padding: 4em;
+  padding: 4em 0;
 }
 .page-sec-title .title {
   margin: 0;
@@ -978,43 +992,79 @@ footer {
   margin: 0;
 }
 
-/* Service */
+/* page Service */
 .page-service {
+  max-width: 1000px;
   padding: 2em;
   margin: 0 auto;
+}
+.page-service .page-sec-title .title {
+  font-size: 48px;
+}
+.page-service .title-area {
+  padding: 2em;
+}
+.page-service .title {
+  color: #435B8C;
+  font-size: 24px;
+}
+.page-service .sub {
+  color: #435B8C;
 }
 .page-service .service-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 500px);
   gap: 10px;
 }
 .page-service .page-service-card {
-  background: skyblue;
-  color: #fff;
   padding: 10px;
 }
 .page-service .page-service-card .service-img {
   text-align: center;
 }
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  gap: 10px;
+.page-service .page-service-card img {
+  width: 100%;
+}
+.page-service .page-service-card .text {
+  font-size: 16px;
 }
 
-.item {
-  background: skyblue;
-  color: #fff;
-  padding: 10px;
+/* page Flow */
+.page-sec-title .title {
+  margin: 0;
+  font-size: 48px;
 }
 
-/* About */
+.flow {
+  display: flex;
+  padding: 0 2em 6em 2em;
+}
+.flow .item {
+  width: 32em;
+  background-color: #F8F9FD;
+  padding: 2em 1em;
+}
+.flow .item-title {
+  text-align: center;
+}
+.flow h2 {
+  padding-bottom: 0.7em;
+  color: #435B8C;
+}
+.flow img {
+  padding-bottom: 1em;
+}
+.flow .sign {
+  width: 3em;
+  padding: 8em 0;
+  text-align: center;
+  color: #435B8C;
+}
+
+/* page About */
 .profile .about-area {
   display: flex;
-  padding: 2em;
+  padding: 2em 2em 4em 2em;
 }
 .profile .about-area .sub {
   font-size: 32px;
@@ -1034,19 +1084,69 @@ footer {
   padding: 2em 0;
 }
 
-/* Vision */
-.vision-area {
+/* page Carrers */
+.carrers {
+  background-color: #FBF8F6;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0 2em 1em 2em;
+}
+
+.timeline > li {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 640px) {
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    padding: 20px 0 2em 2em;
+  }
+
+  .timeline-content:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #EBDFD5;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}
+/* page Vision */
+.vision {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.vision .vision-area {
   padding: 4em;
   justify-content: center;
   display: flex;
 }
-.vision-area .sub {
+.vision .vision-area .sub {
   font-size: 24px;
   padding: 1em 0;
   font-weight: bold;
 }
 
-/* Contact */
+/* page Contact */
 .contact {
   background-color: #435B8C;
   text-align: center;
@@ -1071,31 +1171,105 @@ footer {
 }
 
 /*-------------------------------------------
-アーカイブ
+archive
 -------------------------------------------*/
-/* ヘッダー */
-.archive {
-  padding: 2em;
-}
-
+/* archive */
+/* archive Works */
 .card-list-area {
   display: flex;
 }
 
-/* Works */
-.works {
-  max-width: 1000px;
-  margin: 0 auto;
+.card-contents {
+  padding: 4em 2em;
 }
-.works .card-list-area {
+.card-contents .card-list-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 400px);
+  gap: 2em;
 }
-.works .card {
+.card-contents .card {
+  width: 100%;
   color: #fff;
-  padding: 1em;
+  padding: 2em 0;
+}
+.card-contents img {
+  width: 100%;
+}
+
+/* ページネーション(検索ページの次へや前へ) */
+/* pagination */
+.pagination {
+  margin-bottom: 30px;
+}
+
+/* リンクの枠 */
+.pagination .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* 数字のリンク */
+.pagination .nav-links .page-numbers {
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #aaa;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 0.5em 0.8em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* 現在のページ */
+.pagination .nav-links .current {
+  background-color: #435B8C;
+  color: #fff;
+}
+
+/* 現在のページとドット以外にホバーした時 */
+.pagination .nav-links a:hover {
+  background-color: #435B8C;
+  color: #fff;
+}
+
+/*-------------------------------------------
+single
+-------------------------------------------*/
+/* Work */
+.single {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 2em;
+}
+.single .post-thumbnail-image {
+  margin: 0 auto;
+  border: 3em solid #EBDFD5;
+  border-radius: 3em;
+  height: 30em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.single .post-title {
+  padding: 2em 0 1em 4em;
+  font-size: 32px;
+}
+.single .post-text {
+  padding: 0 8em;
+}
+.single .post-text a {
+  color: #435B8C;
+}
+.single .pagination {
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*-------------------------------------------
@@ -1130,6 +1304,7 @@ PC(1025)
     background-color: skyblue;
     width: 100%;
     z-index: 5;
+    position: fixed;
   }
   #header .header-title {
     padding-left: 0.5em;
@@ -1139,7 +1314,7 @@ PC(1025)
   }
 
   .top {
-    padding: 2em 1em;
+    padding: 8em 1em 4em 1em;
   }
 
   .sec-title .title {
@@ -1161,9 +1336,6 @@ PC(1025)
     margin: 0;
   }
 
-  .page-header {
-    padding: 2em;
-  }
   .page-header .title {
     margin: 0;
     font-size: 32px;
@@ -1230,7 +1402,7 @@ PC(1025)
     top: 0;
     left: 0;
     width: 100%;
-    height: 1000px;
+    height: 100vh;
     display: block;
     position: fixed;
     opacity: 0.8;
@@ -1255,7 +1427,7 @@ PC(1025)
     padding: 1em;
   }
 
-  /* フロント：トップ */
+  /* フロント top */
   .top-area {
     flex-direction: column-reverse;
   }
@@ -1274,13 +1446,21 @@ PC(1025)
     width: 100%;
   }
 
-  /* フロント：Service */
+  /* フロント Work */
+  /* front-page Works */
+  .swiper {
+    max-width: 30em;
+  }
+  .swiper img {
+    width: 24em;
+  }
+
+  /* フロント Service */
   .service-card {
     display: block;
-    margin: 2em;
   }
   .service-card .service-img {
-    padding: 2em;
+    padding: 3em 2em 0 2em;
   }
   .service-card .service-img img {
     width: 50%;
@@ -1293,8 +1473,7 @@ PC(1025)
     font-size: 16px;
   }
 
-  /* フロント：About */
-  /* Aboutエリア */
+  /* フロント About */
   .front-about .about-area {
     flex-direction: column-reverse;
     display: flex;
@@ -1305,7 +1484,12 @@ PC(1025)
     margin: 0 auto;
   }
 
-  /* Page：About */
+  /* page header */
+  .page-header {
+    padding: 6em 0 2em 2em;
+  }
+
+  /* Page：About profile*/
   .profile .about-img {
     text-align: center;
   }
@@ -1322,15 +1506,104 @@ PC(1025)
     text-align: center;
   }
 
-  .vision-area {
-    padding: 2em 2em 6em 2em;
+  /* page-about carrer*/
+  .carrers-area {
+    padding: 1em;
+  }
+  .carrers-area .timeline {
+    padding: 0 2em 1em 2em;
+  }
+
+  /* page-about vision*/
+  .vision .vision-area {
+    padding: 2em 2em 4em 2em;
     flex-direction: column-reverse;
   }
-  .vision-area .vision-img {
+  .vision .vision-area .vision-img {
     text-align: center;
   }
-  .vision-area .sub {
+  .vision .vision-area .sub {
     padding: 2em 0 0.5em 0;
+  }
+
+  .contact .page-sec-title {
+    padding: 2em;
+  }
+
+  /* page Service */
+  .page-service .page-sec-title {
+    padding: 0;
+  }
+  .page-service .page-sec-title .title {
+    font-size: 32px;
+  }
+  .page-service .title {
+    font-size: 32px;
+  }
+  .page-service .title-area {
+    padding: 0;
+  }
+  .page-service .title {
+    color: #435B8C;
+    font-size: 24px;
+  }
+  .page-service .service-sub-title {
+    color: rgba(51, 51, 51, 0.34);
+  }
+  .page-service .service-area {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .page-service .page-service-card {
+    padding: 2em 0;
+  }
+  .page-service .page-service-card img {
+    width: 70%;
+  }
+
+  /* page Service flow*/
+  /* page Flow */
+  .flow {
+    display: block;
+    justify-content: center;
+  }
+  .flow .item {
+    margin: 1em auto;
+    width: 70%;
+    background-color: #F8F9FD;
+  }
+  .flow .item .item-title {
+    text-align: center;
+  }
+  .flow .item h2 {
+    padding-bottom: 0.7em;
+    color: #435B8C;
+  }
+  .flow .item img {
+    padding-bottom: 1em;
+  }
+
+  .sign {
+    display: none;
+  }
+
+  /* archive Works */
+  .works .card-list-area {
+    max-width: 750px;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  /* single work */
+  .single .post-thumbnail-image {
+    border-radius: 3em;
+    height: 20em;
+  }
+  .single .post-title {
+    padding: 2em 0 0 1em;
+  }
+  .single .post-text {
+    padding: 1em;
   }
 }
 /*-------------------------------------------
@@ -1340,16 +1613,43 @@ PC(1025)
   #header {
     background-color: pink;
     font-size: 12px;
+    position: fixed;
+  }
+  #header .header-nav {
+    padding-right: 0;
+    justify-content: start;
   }
 
   .hamburger-btn {
     top: 18px;
-    right: 20px;
+    right: 24px;
   }
 
-  /*-------------------------------------------
-  モバイル：service
-  -------------------------------------------*/
+  .top {
+    padding: 8em 1em 2em 1em;
+  }
+
+  .top-area {
+    padding: 0;
+  }
+  .top-area .top-title {
+    font-size: 32px;
+    padding: 1em 0;
+  }
+
+  /* front-page Works */
+  #second-area {
+    padding: 4em;
+  }
+
+  .swiper {
+    max-width: 21em;
+  }
+  .swiper img {
+    width: 18em;
+  }
+
+  /* フロント service */
   .service-card {
     display: block;
     margin: 2em;
@@ -1359,10 +1659,101 @@ PC(1025)
   }
 
   .service-text-area {
-    padding: 0;
+    padding: 1em;
   }
   .service-text-area .service-text {
     font-size: 16px;
+  }
+
+  /* page header */
+  .page-header {
+    padding: 6em 0 2em 2em;
+  }
+
+  /* Page-About profile*/
+  .profile img {
+    width: 100%;
+  }
+  .profile .about-area {
+    display: block;
+  }
+  .profile .btn-area {
+    text-align: center;
+  }
+  .profile .btn-text {
+    font-size: 14px;
+  }
+
+  /* Page-About carrers*/
+  .carrers .page-sec-title {
+    padding: 2em 1em;
+  }
+
+  /* page-about vision*/
+  .vision img {
+    width: 14em;
+  }
+
+  /* page service */
+  .page-sec-title {
+    padding: 2em 2em 2em 1em;
+  }
+
+  .page-service .title {
+    font-size: 20px;
+  }
+
+  /* archive Works */
+  .archive {
+    padding: 1em;
+  }
+
+  .works .card-list-area {
+    max-width: 750px;
+    grid-template-columns: repeat(1, auto);
+  }
+  .works img {
+    width: 100%;
+  }
+
+  /* single work */
+  .single {
+    padding: 1em;
+  }
+  .single .post-thumbnail-image {
+    border: 1em solid #EBDFD5;
+    border-radius: 2em;
+    height: 10em;
+  }
+  .single .post-title {
+    padding: 1em 0 0 0;
+    font-size: 24px;
+  }
+  .single .post-text {
+    padding: 0em;
+  }
+  .single .pagination {
+    padding: 0;
+  }
+
+  .contact .page-sec-title {
+    padding: 4em 0 1em 0;
+  }
+  .contact .text {
+    padding: 1em 0 0 0;
+    font-size: 1 6px;
+  }
+}
+/*-------------------------------------------
+スモールモバイル
+-------------------------------------------*/
+@media screen and (max-width: 320px) {
+  /* front-page Works */
+  .swiper {
+    max-width: 10em;
+  }
+  .swiper img {
+    width: 10em;
   }
 }
 
