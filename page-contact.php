@@ -1,1 +1,28 @@
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeg1uY---WhOIjQ2x_UHEKAFOw3z-WMwY84yTCPuuVLgDDaVQ/viewform?embedded=true" width="640" height="677" frameborder="0" marginwidth="0" marginheight="0"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span>Loading…</iframe>
+<?php get_header(); ?>
+<section>
+  <div class="page-header">
+    <div class="page-header-area">
+      <h1 class="title">Contact</h1>
+      <p class="sub">お問い合わせ</p>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="contact-form-area">
+      <div class="contact-img">
+        <img src="<?php bloginfo('template_url'); ?>/images/contact.png" alt="contact" />
+      </div>
+      <div class="contact-form">
+        <?php echo do_shortcode('[contact-form-7 id="540" title="Contact"]'); ?>
+        <!-- <?php echo do_shortcode('[contact-form-7 id="62" title="ContactForm"]'); ?> -->
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+
+
+<?php get_footer(); ?>
+<?php wp_footer(); ?>

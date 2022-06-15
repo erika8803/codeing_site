@@ -8,15 +8,15 @@
     <section class="single blog">
     <?php if(have_posts()): while(have_posts()):the_post(); ?>
         <div class="post-contents">
-        <?php if (has_post_thumbnail()): ?>
+        <!-- <?php if (has_post_thumbnail()): ?>
             <div class="post-thumbnail-image" 
                 style="background-image: url(
         <?php echo wp_get_attachment_url( get_post_thumbnail_id() );?>)">
         </div>
         <?php else: ?>
         <img src="<?php bloginfo('template_url'); ?>/images/nophoto.jpg">
-        <?php endif; ?>
-        <h1 class="post-title"><?php the_title(); ?></h1>
+        <?php endif; ?> -->
+        <!-- <h1 class="post-title"><?php the_title(); ?></h1> -->
         <div class="post-text">
             <p><?php the_content('Read more'); ?></p>
         <?php endwhile; ?>

@@ -141,8 +141,7 @@
               ぜひお気軽にご連絡ください。</p>
             <div class="btn-area">
               <button class="btn">
-                <!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact"> -->
-                <a href="<?php echo esc_url('https://docs.google.com/forms/d/e/1FAIpQLSeg1uY---WhOIjQ2x_UHEKAFOw3z-WMwY84yTCPuuVLgDDaVQ/viewform?usp=sf_link'); ?>">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
                   <div class="btn-text">お問い合わせ</div>
                 </a>
               </button>

@@ -57,7 +57,7 @@
         <div>
           <ul class="service-card">
             <li class="service-img">
-              <img src="<?php bloginfo('template_url'); ?>/images/service-top-direction.svg" alt="service-direction" />
+              <img src="<?php bloginfo('template_url'); ?>/images/service-top-direction.png" alt="service-direction" />
             </li>
             <li class="service-text-area">
               <h2 class="service-title">ディレクション</h2>
@@ -67,7 +67,7 @@
           </ul>
           <ul class="service-card">
             <li class="service-img">
-              <img src="<?php bloginfo('template_url'); ?>/images/service-top-design.svg" alt="service-design" />
+              <img src="<?php bloginfo('template_url'); ?>/images/service-top-design.png" alt="service-design" />
             </li>
             <li class="service-text-area">
               <h2 class="service-title">デザイン</h2>
@@ -77,7 +77,7 @@
           </ul>
           <ul class="service-card">
             <li class="service-img">
-              <img src="<?php bloginfo('template_url'); ?>/images/service-top-coding.svg" alt="service-coding" />
+              <img src="<?php bloginfo('template_url'); ?>/images/service-top-coding.png" alt="service-coding" />
             </li>
             <li class="service-text-area">
               <h2 class="service-title">コーディング</h2>
@@ -112,7 +112,7 @@
             ご興味を持っていただけましたら、ぜひお気軽にご連絡ください。
           </p>
           <div class="about-img">
-              <img src="<?php bloginfo('template_url'); ?>/images/about.png" alt  ="about" />
+              <img src="<?php bloginfo('template_url'); ?>/images/about.svg" alt  ="about" />
           </div>
         </div>
         <div class="btn-area">

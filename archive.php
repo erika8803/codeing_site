@@ -15,8 +15,8 @@
             <div class="post-img card-img ">
                 <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()): ?>
-                  <img src=<?php the_post_thumbnail( 'thumbnail' ); ?>
-                  <!-- <img class="" src="<?php the_post_thumbnail(array(320, 250), array( 'class' => 'thumbimg')); ?> -->
+                  <!-- <img src=<?php the_post_thumbnail( 'thumbnail' ); ?> -->
+                  <img class="" src="<?php the_post_thumbnail(array(400, 255), array( 'class' => 'thumbimg')); ?>
                 <?php else: ?>
                     <img class="" src="<?php bloginfo('template_url'); ?>/images/nophoto.jpg">
                 <?php endif; ?>

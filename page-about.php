@@ -16,7 +16,7 @@
         </div>
         <div class="about-area">
           <div class="about-img">
-            <img src="<?php bloginfo('template_url'); ?>/images/about.png" alt="service-coding" />
+            <img src="<?php bloginfo('template_url'); ?>/images/about.svg" alt="about" />
           </div>
           <div class="about-text-area">
             <h2 class="sub">Erika</h2>
@@ -99,7 +99,7 @@
               </p>
             </div>
             <div class="vision-img">
-              <img src="<?php bloginfo('template_url'); ?>/images/vision-img.svg" alt="vison-img" />
+              <img src="<?php bloginfo('template_url'); ?>/images/vision-img.png" alt="vison-img" />
             </div>
           </div>
         </div>
@@ -113,8 +113,7 @@
                 ぜひお気軽にご連絡ください。</p>
             <div class="btn-area">
               <button class="btn">
-              <!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact"> -->
-                <a href="<?php echo esc_url('https://docs.google.com/forms/d/e/1FAIpQLSeg1uY---WhOIjQ2x_UHEKAFOw3z-WMwY84yTCPuuVLgDDaVQ/viewform?usp=sf_link'); ?>">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
                   <div class="btn-text">お問い合わせ</div>
                 </a>
             </button>
