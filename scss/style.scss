@@ -500,7 +500,7 @@ archive
 
   /* リンクの枠 */
   .pagination .nav-links {
-    padding: 2em 0 0 0;
+    padding: 2em 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1002,9 +1002,6 @@ PC(1025)
     }
   }
 
-
-
-
   /* page header */
   .page-header {
     padding: 6em 0 2em 2em;
@@ -1075,7 +1072,7 @@ PC(1025)
 
   /* archive Works */
   .archive {
-    padding: 2em 0 6em 0;
+    padding: 2em 0;
   }
   // グリッド
   .works {
@@ -1099,6 +1096,11 @@ PC(1025)
   .contact-form-area {
     img {
       width: 14em;
+    }
+  }
+  .contact-form {
+    .btn_contact7 {
+      padding: 2em 0 4em 0;
     }
   }
 
@@ -1187,9 +1189,9 @@ PC(1025)
     .wpcf7-submit {
       font-size: .8rem;
     }
-    .btn_contact7 {
-      padding: 2em 0 0 0;
-    }
+    // .btn_contact7 {
+    //   padding: 2em 0 0 0;
+    // }
   }
 
 }

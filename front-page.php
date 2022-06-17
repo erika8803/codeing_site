@@ -34,7 +34,6 @@
               <li class="swiper-slide">
                 <img src="<?php bloginfo('template_url'); ?>/images/portfolio.png" alt="portfolio" />
               </li>
-              <div class="swiper-pagination"></div>
             </ul>
 
             <!-- 前後の矢印 -->
@@ -130,6 +129,21 @@
       </div>
     </div>
   </section>
+  <div class="contact">
+        <div class="wrapper">
+          <div class="page-sec-title">
+            <h1 class="title">Contact</h1>
+            <p class="text">ご興味を持っていただけましたら、</br>
+                ぜひお気軽にご連絡ください。</p>
+            <div class="btn-area">
+              <button class="btn">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
+                  <div class="btn-text">お問い合わせ</div>
+                </a>
+            </button>
+          </div>
+        </div>
+      </div>
 </main>
 <?php get_footer(); ?>
 <?php wp_footer(); ?>

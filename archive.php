@@ -34,6 +34,22 @@
     </div>
   </div>
   <?php the_posts_pagination(); ?>
+
 </section>
+<div class="contact">
+        <div class="wrapper">
+          <div class="page-sec-title">
+            <h1 class="title">Contact</h1>
+            <p class="text">ご興味を持っていただけましたら、</br>
+                ぜひお気軽にご連絡ください。</p>
+            <div class="btn-area">
+              <button class="btn">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
+                  <div class="btn-text">お問い合わせ</div>
+                </a>
+            </button>
+          </div>
+        </div>
+      </div>
 <?php wp_footer(); ?>
 <?php get_footer(); ?>   

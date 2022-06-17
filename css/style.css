@@ -1248,7 +1248,7 @@ archive
 
 /* リンクの枠 */
 .pagination .nav-links {
-  padding: 2em 0 0 0;
+  padding: 2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1776,7 +1776,7 @@ PC(1025)
 
   /* archive Works */
   .archive {
-    padding: 2em 0 6em 0;
+    padding: 2em 0;
   }
 
   .works .card-contents {
@@ -1797,6 +1797,10 @@ PC(1025)
   /* page contact-form*/
   .contact-form-area img {
     width: 14em;
+  }
+
+  .contact-form .btn_contact7 {
+    padding: 2em 0 4em 0;
   }
 
   /* single work */
@@ -1867,9 +1871,6 @@ PC(1025)
   }
   .contact-form-area .wpcf7-submit {
     font-size: 0.8rem;
-  }
-  .contact-form-area .btn_contact7 {
-    padding: 2em 0 0 0;
   }
 }
 

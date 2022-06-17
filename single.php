@@ -9,15 +9,6 @@
         <div class="wrapper">
         <?php if(have_posts()): while(have_posts()):the_post(); ?>
             <div class="post-contents">
-                <!-- <?php if (has_post_thumbnail()): ?>
-                    <div class="post-thumbnail-image" 
-                        style="background-image: url(
-                <?php echo wp_get_attachment_url( get_post_thumbnail_id() );?>)">
-                </div>
-                <?php else: ?>
-                <img src="<?php bloginfo('template_url'); ?>/images/nophoto.jpg">
-                <?php endif; ?> -->
-                <!-- <h1 class="post-title"><?php the_title(); ?></h1> -->
                 <div class="post-text">
                     <p><?php the_content('Read more'); ?></p>
                 <?php endwhile; ?>
@@ -29,6 +20,21 @@
             </div>
         </div>
     </section>
+    <div class="contact">
+        <div class="wrapper">
+          <div class="page-sec-title">
+            <h1 class="title">Contact</h1>
+            <p class="text">ご興味を持っていただけましたら、</br>
+                ぜひお気軽にご連絡ください。</p>
+            <div class="btn-area">
+              <button class="btn">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
+                  <div class="btn-text">お問い合わせ</div>
+                </a>
+            </button>
+          </div>
+        </div>
+      </div>
         
     <?php wp_footer(); ?>
 <?php get_footer(); ?>   
