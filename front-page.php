@@ -34,7 +34,12 @@
               <li class="swiper-slide">
                 <img src="<?php bloginfo('template_url'); ?>/images/portfolio.png" alt="portfolio" />
               </li>
+              <div class="swiper-pagination"></div>
             </ul>
+
+            <!-- 前後の矢印 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
 
         <div class="btn-area">

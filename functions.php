@@ -9,8 +9,9 @@ StyleSheet・JavaScript読み込み設定
 --------------------------------------- */
 function add_scripts() { 
   wp_enqueue_style('style', get_template_directory_uri().'/css/style.css');
-  wp_enqueue_script('script-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), false, true);
+  // wp_enqueue_script('script-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), false, true);
   wp_enqueue_script('script-main', get_template_directory_uri() . '/js/main.js', array(), false, true);
+  wp_enqueue_script('script-swiper', "https://unpkg.com/swiper@8/swiper-bundle.min.js");
  
 }
 add_action('wp_enqueue_scripts', 'add_scripts');

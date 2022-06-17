@@ -4,9 +4,9 @@
 @use "swiper-bundle.min";
 
 
-
 body {
   line-height: 1.6;
+  letter-spacing: 0.05em;
   // font-family: 'Kosugi Maru', sans-serif, 'Roboto', sans-serif;
   font-family:  '游ゴシック',YuGothic,'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
 }
@@ -24,6 +24,7 @@ a {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 32px;
 }
 /* 共通　*/
 .sec-title {
@@ -41,7 +42,7 @@ a {
 }
 .btn-area {
   text-align: center;
-  padding: 2em 0 4em 0;
+  padding: 3em 0 4em 0;
   .btn {
     border: 0px;
     background-color: #435B8C;
@@ -122,16 +123,18 @@ a {
 }
 
 /* front-page Works */
-.swiper {
-  max-width: 50em;
-  img {
-    width: 20em;
-  }
-  ul {
-    padding: 2em;
-  }
+.swiper img {
+  width: 100%;
 }
-
+.swiper-wrapper {
+  text-align: center;
+}
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
 
 /* front-page Services */
 .services {
@@ -143,8 +146,7 @@ a {
   margin: 2em;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px 5px gray;
-  border: solid #e3dfde;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   .service-img {
     text-align: center;
     padding: 3em;
@@ -187,6 +189,9 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1em;
+  a {
+    color: #fff;
+  }
 }
 
 
@@ -227,14 +232,8 @@ footer {
 /* page Service */
 .page-service {
   max-width: 1000px;
-  padding: 2em;
+  padding: 0 2em;
   margin: 0 auto;
-  .page-sec-title .title {
-    font-size: 48px;
-}
-  .title-area {
-    padding: 2em;
-  }
   .title {
     color: v.$point-color;
     font-size: 24px;
@@ -264,10 +263,13 @@ footer {
 
 
 /* page Flow */
-.page-sec-title .title {
+.page-sec-title {
+  .title {
     margin: 0;
     font-size: 48px;
+  }
 }
+
 .flow {
   display: flex;
   padding: 0 2em 6em 2em;
@@ -335,7 +337,7 @@ footer {
   margin-bottom: 60px;
 }
 
-@media ( min-width : 640px ){
+@media ( min-width : 710px ){
   .timeline > li {
     overflow: hidden;
     margin: 0;
@@ -344,7 +346,7 @@ footer {
   .timeline-date {
     width: 110px;
     float: left;
-    margin-top: 20px;
+    margin-top: 13px;
     font-size: 24px;
   }
   .timeline-content {
@@ -432,79 +434,36 @@ footer {
     background-color: v.$point-color;
     color: #fff;
     border: v.$point-color;
-    padding: 0.5em 0;
+    padding: 1em 2em;
     border-radius: 50px;
+    font-size: 1rem;
+  }
+  .btn_contact7 {
+    padding: 2em 0 0 0;
   }
 }
-
-/* Contact Form7 */
-.contact7 {
-	max-width: 100%;
-	box-sizing: border-box;
+.wpcf7 {
   input {
-    padding: 0.5em 0;
-   }
-}
-.contact7 dd {
-	margin: 0 0 1em 0;
-}
-.contact7 dt {
-	font-weight: normal;
-}
-
-.contact7 .must,
-.contact7 .optional {
-	color: red;
-	padding: 5px;
-}
-.btn_contact7 {
-	text-align: center;
-  font-size: 14px;
-}
-.btn_contact7 input {
-	// width: 70%;
-	background-color: #005513;
-	color: #FFF;
-	font-size: 1.1em;
-	font-weight: bold;
-	letter-spacing: 0.2em;
-	border: 1px solid #005513;
-	-webkit-transition: 0.3s;
-	-moz-transition: 0.3s;
-	-o-transition: 0.3s;
-	-ms-transition: 0.3s;
-	transition: 0.3s;	
-}
-.btn_contact7 input:hover {
-	background-color: #FFF;
-	color: v.$point-color;; 
-}
-@media screen and (min-width: 768px) {
-  .contact7 dt {
-    clear: left;
-    padding: 5px 10px 5px 0;
-    }
-
-  .btn_contact7 input {
-    width: 50%;
-    background-color: #005513;
-    color: #FFF;
-    font-size: 1.1em;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .4em 0;
+    border: 1px solid #cfd8dc;
+  }
+  textarea {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .4em 0;
+    border: 1px solid #cfd8dc;
+  }
+  dt {
+    padding: 1em 0 0.1em 0; 
+  }
+  .must {
+    color: red;
     font-weight: bold;
-    letter-spacing: 0.2em;
-    border: 1px solid #005513;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    -ms-transition: 0.3s;
-    transition: 0.3s;	
-  }
-  .btn_contact7 input:hover {
-    background-color: #FFF;
-    color: v.$point-color;; 
+    padding-left: .3em;
   }
 }
-
 
 
 
@@ -541,6 +500,7 @@ archive
 
   /* リンクの枠 */
   .pagination .nav-links {
+    padding: 2em 0 0 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -579,32 +539,31 @@ single
 -------------------------------------------*/
 /* Work */
 .single {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2em;
-  .post-thumbnail-image {
-    margin: 0 auto;
-    border: 3em solid v.$main-color;
-    border-radius: 3em;
-    height: 30em;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .wp-block-image img {
-    width: 90%;
-    height: 90%;
-    background-color: v.$main-color;
-    padding: 2em;
-    border-radius: 3em;
-  }
-
   .pagination {
     margin: 0 auto;
-    padding: 2em;
+    padding: 2em 4em;
     display: flex;
     justify-content: space-between;
+  }
+  .portfolio-link {
+    color: blue;
+  }
+  h1 {
+    font-size: 2rem;
+    padding: 1em 0 .5em 0;
+  }
+  .portfolio-img  {
+    padding: 2em;
+    background-color: v.$main-color;
+    border-radius: 30px;
+    width: 90%;
+    height: auto;
+  }
+  .post-text {
+    padding: 2em 0;
+  }
+  .portfolio-text {
+    padding: 0 4em;
   }
 }
 
@@ -626,10 +585,6 @@ PC(1025)
       width: 24em;
     }
   }
-
-  .page-sec-title {
-    padding: 4em 8em;
-  }
 }
 
 /*-------------------------------------------
@@ -643,6 +598,7 @@ PC(1025)
     position: fixed;
     .header-title {
       padding-left: 0.5em;
+      font-size: 32px;
     }
   
   .header-fixed {
@@ -661,7 +617,6 @@ PC(1025)
     }
   }
   .page-sec-title {
-    padding: 2em;
     .title {
       font-size: 32px;
       margin: 0;
@@ -749,7 +704,7 @@ PC(1025)
     /* 🍔を押下後、メニューを表示する */
     #nav {
       width: 100%;
-      top: 5em;
+      top: 2.4em;
       left: 0;
       z-index: 5;
       font-size: 24px;
@@ -788,12 +743,9 @@ PC(1025)
 
   /* フロント Work */
   /* front-page Works */
-  .swiper {
-    max-width: 30em;
-    img {
-      width: 24em;
-    }
-  }
+.swiper img {
+  width: 80%;
+}
 
   /* フロント Service */
   .service-card {
@@ -876,23 +828,6 @@ PC(1025)
 
   /* page Service */
   .page-service {
-    .page-sec-title {
-      padding: 0;
-      .title {
-        font-size: 32px;
-      }
-    }
-
-    .title {
-      font-size: 32px;
-    }
-    .title-area {
-      padding: 0;
-    }
-    .title {
-      color: v.$point-color;
-      font-size: 24px;
-    }
     .service-sub-title {
       color: rgba(51, 51, 51, 0.34);
     }
@@ -915,9 +850,11 @@ PC(1025)
     display: block;
     justify-content: center;
   .item {
-    margin: 1em auto;
-    width: 70%;
+    // margin: 1em auto;
+    margin-bottom: 16px;
+    width: 100%;
     background-color: #F8F9FD;
+    box-sizing: border-box;
     .item-title {
       text-align: center;
     }
@@ -950,7 +887,6 @@ PC(1025)
     }
   }
   .contact-form {
-    padding: 0 1em;
     width: 100%;
     p {
       padding-bottom: 1em;
@@ -958,8 +894,6 @@ PC(1025)
     /* ボタン */
     .btn_contact7 {
       text-align: left;
-      // width: 80%;
-      padding: 0 0.5em;
     }
   }
 
@@ -975,16 +909,12 @@ PC(1025)
 
   /* single work */
   .single {
-    .post-thumbnail-image {
-      border-radius: 3em;
-      height: 20em;
+    .pagination {
+      padding: 2em;
     }
-    .post-title {
-      padding: 2em 0 0 1em;
+    .portfolio-text {
+    padding: 0 2em;
     }
-    .post-text {
-      padding: 1em;
-      }
   }
 
 }
@@ -993,6 +923,19 @@ PC(1025)
 モバイル
 -------------------------------------------*/
 @include m.mq(mobile) {
+/* 共通 */
+  .page-sec-title {
+    padding: 2em 0;
+  }
+  .btn-area {
+    .btn {
+      width: 80%;
+    }
+    .btn-text {
+      font-size: 8em;
+    }
+  }
+
   #header {
     font-size: 12px;
     position: fixed;
@@ -1022,14 +965,13 @@ PC(1025)
   #second-area {
    padding: 4em;
   }
-  .swiper {
-    max-width: 24em;
-    img {
-      width: 80%;
-    }
-  }
 
   /* フロント service */
+  .services {
+    .wrapper {
+      padding: 0;
+    }
+  }
   .service-card {
     display: block;
     margin: 2em;
@@ -1049,15 +991,18 @@ PC(1025)
 
   /* フロント about */
   .front-about {
+    .wrapper {
+      padding: 0;
+    }
     .about-img {
-      img{
-        width: 100%;
-      }
+      padding: 0;
     }
     .about-text {
       padding: 2em 1em 0 1em;
     }
   }
+
+
 
 
   /* page header */
@@ -1069,7 +1014,7 @@ PC(1025)
   .profile {
     .about-area {
       display: block;
-      padding: 1em 1em 2em 1em;
+      padding: 0;
       img {
         width: 100%;
       }
@@ -1080,9 +1025,11 @@ PC(1025)
       }
     }
     .btn-area {
+        padding-bottom: 3em;
       .btn {
         width: 100%;
       }
+
     }
     .btn-text {
       font-size: 12px;
@@ -1103,7 +1050,7 @@ PC(1025)
   /* page-about vision*/
   .vision {
     .vision-area {
-      padding: 1em 1em 4em 1em;
+      padding: 0 0 4em 0;
     }
     img {
       width: 16em;
@@ -1112,18 +1059,23 @@ PC(1025)
 
 
   /* page service */
-  .page-sec-title {
-    padding: 2em 2em 2em 1em;
-  }
-
   .page-service { 
     .title {
       font-size: 20px;
     }
   }
+
+  /* page flow */
+  .page-flow {
+      padding: 0 2em 2em 2em;
+  }
+  .flow {
+    padding: 0;
+  }
+
   /* archive Works */
   .archive {
-    padding: 2em 0;
+    padding: 2em 0 6em 0;
   }
   // グリッド
   .works {
@@ -1149,34 +1101,28 @@ PC(1025)
       width: 14em;
     }
   }
-  .contact-form {
-    padding: 0 0.5em;
-    width: 80%;
-  }
 
   /* single work */
   .single {
-    padding: 1em;
-    .post-thumbnail-image {
-      border: 1em solid v.$main-color;
-      border-radius: 2em;
-      height: 10em;
-    }
-    .post-title {
-      padding: 1em 0 0 0;
-      font-size: 24px;
-    }
-    .post-text {
-      padding: 0em;
-    }
     .pagination {
       padding: 0;
     }
-    .wp-block-image img {
+    h1 {
+      font-size: 1.8em;
+      padding: .5em 0 .2em 0;
+    }
+    .portfolio-img {
       padding: 1em;
+      width: 90%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .portfolio-text {
+      padding: 0;
     }
   }
 
+  
   .contact {
     .page-sec-title {
       padding: 2em 0 1em 0;
@@ -1186,9 +1132,6 @@ PC(1025)
       font-size: 14px;
     }
   }
-
-
-
 }
 
 
@@ -1201,20 +1144,17 @@ PC(1025)
 
   /* front-page About */
   .front-about {
-    .about-img img {
-      width: 12em;
+    .about-img  {
+      text-align: center;
+    }
+    img {
+      width: 80%;
     }
   }
 
   /* front-page Works */
   #second-area {
     padding: 4em;
-   }
-  .swiper {
-    max-width: 100%;
-    img {
-      width: 100%;
-    }
     ul {
       padding: 0;
     }
@@ -1223,10 +1163,6 @@ PC(1025)
   /* Page：About profile*/
   .profile {
     .about-area {
-      padding: 0 0.5em;
-      .btn {
-        width: 17em;
-      }
       .btn-text {
         font-size: 14px;
       }
@@ -1242,14 +1178,18 @@ PC(1025)
   }
 
 
-
-
   /* page contact-form*/
   .contact-form-area {
     img {
       width: 12em;
     }
+    /* contactボタン */
+    .wpcf7-submit {
+      font-size: .8rem;
+    }
+    .btn_contact7 {
+      padding: 2em 0 0 0;
+    }
   }
 
-  
 }

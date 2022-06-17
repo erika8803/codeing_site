@@ -7,8 +7,8 @@
       <link rel="SHORTCUT ICON" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Damion&family=Kosugi+Maru&family=Roboto&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Damion&family=Kosugi+Maru&family=Roboto&display=swap" rel="stylesheet">
 
 <?php wp_head(); ?>
     </head>

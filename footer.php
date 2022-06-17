@@ -1,7 +1,10 @@
     <footer>
       <!-- <p class="copyright"> -->
         © 
-        <?= date('Y'); ?><?php bloginfo('name'); ?>
+        <?= date('Y'); ?>
+        <a href="<?php echo home_url(); ?>">
+          <?php bloginfo('name'); ?>
+        </a>
       </p>
     </footer>
   </body>

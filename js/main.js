@@ -58,27 +58,50 @@ const observer = new IntersectionObserver((entries) => {
 
 
 /*-------------------------------------------
-　swiper処理
+Swiper処理
 -------------------------------------------*/
 // swiperオブジェクト呼び出し
-const mySwiper = new Swiper('.swiper', {
+var mySwiper = new Swiper('.swiper', {
   loop: true,
-  slidesPerView: 3,  
-  // initialSlide: 4,
-  centeredSlides: true,
-  spaceBetween: 15, // スライド間の余白（px）
-
   autoplay: {
-    delay: 5000, // 秒数を設定
+    delay: 5000, // デフォルト値を設定
   },
-  breakpoints: {
+  slidesPerView: 2.2,
+  // initialSlide: 3,
+  spaceBetween: 0,
+  centeredSlides: true,
+  // ページネーション
+  // 前後の矢印
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
 
-    200: {
+  },
+
+
+  breakpoints: {
+    // Swiper のコンテナ幅が 1000px 以上の場合
+    0: {
       slidesPerView: 1,
+      spaceBetween: 50,
     },
-    768: {
-      slidesPerView: 2,
+    550: {
+      slidesPerView: 1,
+      spaceBetween: 50,
     },
+    770: {
+      slidesPerView: 2.2,
+      spaceBetween: 50,
+    },
+    950: {
+      slidesPerView: 2.2,
+      spaceBetween: 50,
+    },
+
+
+
+
   }
-  
 })
+
+

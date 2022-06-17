@@ -13,7 +13,7 @@
         <img src="<?php bloginfo('template_url'); ?>/images/contact.png" alt="contact" />
       </div>
       <div class="contact-form">
-        <?php echo do_shortcode('[contact-form-7 id="540" title="Contact"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="540" title="ContactForm"]'); ?>
         <!-- <?php echo do_shortcode('[contact-form-7 id="62" title="ContactForm"]'); ?> -->
       </div>
     </div>

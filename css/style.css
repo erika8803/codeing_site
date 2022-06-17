@@ -105,7 +105,7 @@ input, select {
 }
 
 /**
- * Swiper 8.2.3
+ * Swiper 8.0.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -113,7 +113,7 @@ input, select {
  *
  * Released under the MIT License
  *
- * Released on: June 10, 2022
+ * Released on: March 4, 2022
  */
 @font-face {
   font-family: swiper-icons;
@@ -325,21 +325,12 @@ input, select {
   pointer-events: none;
 }
 
-.swiper-button-next.swiper-button-hidden, .swiper-button-prev.swiper-button-hidden {
-  opacity: 0;
-  cursor: auto;
-  pointer-events: none;
-}
-
-.swiper-navigation-disabled .swiper-button-next, .swiper-navigation-disabled .swiper-button-prev {
-  display: none !important;
-}
-
 .swiper-button-next:after, .swiper-button-prev:after {
   font-family: swiper-icons;
   font-size: var(--swiper-navigation-size);
   text-transform: none !important;
   letter-spacing: 0;
+  text-transform: none;
   font-variant: initial;
   line-height: 1;
 }
@@ -376,10 +367,6 @@ input, select {
 
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0;
-}
-
-.swiper-pagination-disabled > .swiper-pagination, .swiper-pagination.swiper-pagination-disabled {
-  display: none !important;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
@@ -538,11 +525,7 @@ button.swiper-pagination-bullet {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.swiper-scrollbar-disabled > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-disabled {
-  display: none !important;
-}
-
-.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+.swiper-horizontal > .swiper-scrollbar {
   position: absolute;
   left: 1%;
   bottom: 3px;
@@ -551,7 +534,7 @@ button.swiper-pagination-bullet {
   width: 98%;
 }
 
-.swiper-scrollbar.swiper-scrollbar-vertical, .swiper-vertical > .swiper-scrollbar {
+.swiper-vertical > .swiper-scrollbar {
   position: absolute;
   right: 3px;
   top: 1%;
@@ -613,7 +596,7 @@ button.swiper-pagination-bullet {
   border-top-color: transparent;
 }
 
-.swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader, .swiper:not(.swiper-watch-progress) .swiper-lazy-preloader {
+.swiper-slide-visible .swiper-lazy-preloader {
   animation: swiper-preloader-spin 1s infinite linear;
 }
 
@@ -626,9 +609,6 @@ button.swiper-pagination-bullet {
 }
 
 @keyframes swiper-preloader-spin {
-  0% {
-    transform: rotate(0deg);
-  }
   100% {
     transform: rotate(360deg);
   }
@@ -777,6 +757,7 @@ button.swiper-pagination-bullet {
 
 body {
   line-height: 1.6;
+  letter-spacing: 0.05em;
   font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
 
@@ -795,6 +776,7 @@ a {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 32px;
 }
 
 /* 共通　*/
@@ -814,7 +796,7 @@ a {
 
 .btn-area {
   text-align: center;
-  padding: 2em 0 4em 0;
+  padding: 3em 0 4em 0;
 }
 .btn-area .btn {
   border: 0px;
@@ -896,14 +878,20 @@ a {
 }
 
 /* front-page Works */
-.swiper {
-  max-width: 50em;
-}
 .swiper img {
-  width: 20em;
+  width: 100%;
 }
-.swiper ul {
-  padding: 2em;
+
+.swiper-wrapper {
+  text-align: center;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
 }
 
 /* front-page Services */
@@ -917,8 +905,7 @@ a {
   margin: 2em;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px 5px gray;
-  border: solid #e3dfde;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .service-card .service-img {
   text-align: center;
@@ -961,6 +948,9 @@ footer {
   text-align: center;
   padding: 1em;
 }
+footer a {
+  color: #fff;
+}
 
 /*-------------------------------------------
 ページ
@@ -999,14 +989,8 @@ footer {
 /* page Service */
 .page-service {
   max-width: 1000px;
-  padding: 2em;
+  padding: 0 2em;
   margin: 0 auto;
-}
-.page-service .page-sec-title .title {
-  font-size: 48px;
-}
-.page-service .title-area {
-  padding: 2em;
 }
 .page-service .title {
   color: #435B8C;
@@ -1105,7 +1089,7 @@ footer {
   margin-bottom: 60px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 710px) {
   .timeline > li {
     overflow: hidden;
     margin: 0;
@@ -1115,7 +1099,7 @@ footer {
   .timeline-date {
     width: 110px;
     float: left;
-    margin-top: 20px;
+    margin-top: 13px;
     font-size: 24px;
   }
 
@@ -1204,83 +1188,35 @@ footer {
   background-color: #435B8C;
   color: #fff;
   border: #435B8C;
-  padding: 0.5em 0;
+  padding: 1em 2em;
   border-radius: 50px;
+  font-size: 1rem;
+}
+.contact-form .btn_contact7 {
+  padding: 2em 0 0 0;
 }
 
-/* Contact Form7 */
-.contact7 {
-  max-width: 100%;
-  box-sizing: border-box;
+.wpcf7 input {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.4em 0;
+  border: 1px solid #cfd8dc;
 }
-.contact7 input {
-  padding: 0.5em 0;
+.wpcf7 textarea {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.4em 0;
+  border: 1px solid #cfd8dc;
 }
-
-.contact7 dd {
-  margin: 0 0 1em 0;
+.wpcf7 dt {
+  padding: 1em 0 0.1em 0;
 }
-
-.contact7 dt {
-  font-weight: normal;
-}
-
-.contact7 .must,
-.contact7 .optional {
+.wpcf7 .must {
   color: red;
-  padding: 5px;
-}
-
-.btn_contact7 {
-  text-align: center;
-  font-size: 14px;
-}
-
-.btn_contact7 input {
-  background-color: #005513;
-  color: #FFF;
-  font-size: 1.1em;
   font-weight: bold;
-  letter-spacing: 0.2em;
-  border: 1px solid #005513;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
+  padding-left: 0.3em;
 }
 
-.btn_contact7 input:hover {
-  background-color: #FFF;
-  color: #435B8C;
-}
-
-@media screen and (min-width: 768px) {
-  .contact7 dt {
-    clear: left;
-    padding: 5px 10px 5px 0;
-  }
-
-  .btn_contact7 input {
-    width: 50%;
-    background-color: #005513;
-    color: #FFF;
-    font-size: 1.1em;
-    font-weight: bold;
-    letter-spacing: 0.2em;
-    border: 1px solid #005513;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    -ms-transition: 0.3s;
-    transition: 0.3s;
-  }
-
-  .btn_contact7 input:hover {
-    background-color: #FFF;
-    color: #435B8C;
-  }
-}
 /*-------------------------------------------
 archive
 -------------------------------------------*/
@@ -1312,6 +1248,7 @@ archive
 
 /* リンクの枠 */
 .pagination .nav-links {
+  padding: 2em 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1349,32 +1286,31 @@ archive
 single
 -------------------------------------------*/
 /* Work */
-.single {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2em;
-}
-.single .post-thumbnail-image {
-  margin: 0 auto;
-  border: 3em solid #EBDFD5;
-  border-radius: 3em;
-  height: 30em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.single .wp-block-image img {
-  width: 90%;
-  height: 90%;
-  background-color: #EBDFD5;
-  padding: 2em;
-  border-radius: 3em;
-}
 .single .pagination {
   margin: 0 auto;
-  padding: 2em;
+  padding: 2em 4em;
   display: flex;
   justify-content: space-between;
+}
+.single .portfolio-link {
+  color: blue;
+}
+.single h1 {
+  font-size: 2rem;
+  padding: 1em 0 0.5em 0;
+}
+.single .portfolio-img {
+  padding: 2em;
+  background-color: #EBDFD5;
+  border-radius: 30px;
+  width: 90%;
+  height: auto;
+}
+.single .post-text {
+  padding: 2em 0;
+}
+.single .portfolio-text {
+  padding: 0 4em;
 }
 
 /*-------------------------------------------
@@ -1395,10 +1331,6 @@ PC(1025)
   .top-area img {
     width: 24em;
   }
-
-  .page-sec-title {
-    padding: 4em 8em;
-  }
 }
 /*-------------------------------------------
 タブレット
@@ -1412,6 +1344,7 @@ PC(1025)
   }
   #header .header-title {
     padding-left: 0.5em;
+    font-size: 32px;
   }
   #header .header-fixed {
     position: fixed;
@@ -1428,9 +1361,6 @@ PC(1025)
     font-size: 16px;
   }
 
-  .page-sec-title {
-    padding: 2em;
-  }
   .page-sec-title .title {
     font-size: 32px;
     margin: 0;
@@ -1515,7 +1445,7 @@ PC(1025)
   }
   .open #nav {
     width: 100%;
-    top: 5em;
+    top: 2.4em;
     left: 0;
     z-index: 5;
     font-size: 24px;
@@ -1552,11 +1482,8 @@ PC(1025)
 
   /* フロント Work */
   /* front-page Works */
-  .swiper {
-    max-width: 30em;
-  }
   .swiper img {
-    width: 24em;
+    width: 80%;
   }
 
   /* フロント Service */
@@ -1631,22 +1558,6 @@ PC(1025)
   }
 
   /* page Service */
-  .page-service .page-sec-title {
-    padding: 0;
-  }
-  .page-service .page-sec-title .title {
-    font-size: 32px;
-  }
-  .page-service .title {
-    font-size: 32px;
-  }
-  .page-service .title-area {
-    padding: 0;
-  }
-  .page-service .title {
-    color: #435B8C;
-    font-size: 24px;
-  }
   .page-service .service-sub-title {
     color: rgba(51, 51, 51, 0.34);
   }
@@ -1669,9 +1580,10 @@ PC(1025)
     justify-content: center;
   }
   .flow .item {
-    margin: 1em auto;
-    width: 70%;
+    margin-bottom: 16px;
+    width: 100%;
     background-color: #F8F9FD;
+    box-sizing: border-box;
   }
   .flow .item .item-title {
     text-align: center;
@@ -1704,7 +1616,6 @@ PC(1025)
   }
 
   .contact-form {
-    padding: 0 1em;
     width: 100%;
     /* ボタン */
   }
@@ -1713,7 +1624,6 @@ PC(1025)
   }
   .contact-form .btn_contact7 {
     text-align: left;
-    padding: 0 0.5em;
   }
 
   /* archive Works */
@@ -1723,21 +1633,29 @@ PC(1025)
   }
 
   /* single work */
-  .single .post-thumbnail-image {
-    border-radius: 3em;
-    height: 20em;
+  .single .pagination {
+    padding: 2em;
   }
-  .single .post-title {
-    padding: 2em 0 0 1em;
-  }
-  .single .post-text {
-    padding: 1em;
+  .single .portfolio-text {
+    padding: 0 2em;
   }
 }
 /*-------------------------------------------
 モバイル
 -------------------------------------------*/
 @media screen and (max-width: 480px) {
+  /* 共通 */
+  .page-sec-title {
+    padding: 2em 0;
+  }
+
+  .btn-area .btn {
+    width: 80%;
+  }
+  .btn-area .btn-text {
+    font-size: 8em;
+  }
+
   #header {
     font-size: 12px;
     position: fixed;
@@ -1769,14 +1687,11 @@ PC(1025)
     padding: 4em;
   }
 
-  .swiper {
-    max-width: 24em;
-  }
-  .swiper img {
-    width: 80%;
+  /* フロント service */
+  .services .wrapper {
+    padding: 0;
   }
 
-  /* フロント service */
   .service-card {
     display: block;
     margin: 2em;
@@ -1793,8 +1708,11 @@ PC(1025)
   }
 
   /* フロント about */
-  .front-about .about-img img {
-    width: 100%;
+  .front-about .wrapper {
+    padding: 0;
+  }
+  .front-about .about-img {
+    padding: 0;
   }
   .front-about .about-text {
     padding: 2em 1em 0 1em;
@@ -1808,13 +1726,16 @@ PC(1025)
   /* Page-About profile*/
   .profile .about-area {
     display: block;
-    padding: 1em 1em 2em 1em;
+    padding: 0;
   }
   .profile .about-area img {
     width: 100%;
   }
   .profile .about-img img {
     width: 16em;
+  }
+  .profile .btn-area {
+    padding-bottom: 3em;
   }
   .profile .btn-area .btn {
     width: 100%;
@@ -1833,24 +1754,29 @@ PC(1025)
 
   /* page-about vision*/
   .vision .vision-area {
-    padding: 1em 1em 4em 1em;
+    padding: 0 0 4em 0;
   }
   .vision img {
     width: 16em;
   }
 
   /* page service */
-  .page-sec-title {
-    padding: 2em 2em 2em 1em;
-  }
-
   .page-service .title {
     font-size: 20px;
   }
 
+  /* page flow */
+  .page-flow {
+    padding: 0 2em 2em 2em;
+  }
+
+  .flow {
+    padding: 0;
+  }
+
   /* archive Works */
   .archive {
-    padding: 2em 0;
+    padding: 2em 0 6em 0;
   }
 
   .works .card-contents {
@@ -1873,32 +1799,22 @@ PC(1025)
     width: 14em;
   }
 
-  .contact-form {
-    padding: 0 0.5em;
-    width: 80%;
-  }
-
   /* single work */
-  .single {
-    padding: 1em;
-  }
-  .single .post-thumbnail-image {
-    border: 1em solid #EBDFD5;
-    border-radius: 2em;
-    height: 10em;
-  }
-  .single .post-title {
-    padding: 1em 0 0 0;
-    font-size: 24px;
-  }
-  .single .post-text {
-    padding: 0em;
-  }
   .single .pagination {
     padding: 0;
   }
-  .single .wp-block-image img {
+  .single h1 {
+    font-size: 1.8em;
+    padding: 0.5em 0 0.2em 0;
+  }
+  .single .portfolio-img {
     padding: 1em;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .single .portfolio-text {
+    padding: 0;
   }
 
   .contact .page-sec-title {
@@ -1914,32 +1830,22 @@ PC(1025)
 -------------------------------------------*/
 @media screen and (max-width: 320px) {
   /* front-page About */
-  .front-about .about-img img {
-    width: 12em;
+  .front-about .about-img {
+    text-align: center;
+  }
+  .front-about img {
+    width: 80%;
   }
 
   /* front-page Works */
   #second-area {
     padding: 4em;
   }
-
-  .swiper {
-    max-width: 100%;
-  }
-  .swiper img {
-    width: 100%;
-  }
-  .swiper ul {
+  #second-area ul {
     padding: 0;
   }
 
   /* Page：About profile*/
-  .profile .about-area {
-    padding: 0 0.5em;
-  }
-  .profile .about-area .btn {
-    width: 17em;
-  }
   .profile .about-area .btn-text {
     font-size: 14px;
   }
@@ -1953,8 +1859,17 @@ PC(1025)
   }
 
   /* page contact-form*/
+  .contact-form-area {
+    /* contactボタン */
+  }
   .contact-form-area img {
     width: 12em;
+  }
+  .contact-form-area .wpcf7-submit {
+    font-size: 0.8rem;
+  }
+  .contact-form-area .btn_contact7 {
+    padding: 2em 0 0 0;
   }
 }
 
